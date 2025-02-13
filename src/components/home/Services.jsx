@@ -30,12 +30,12 @@ export default function Services() {
   ];
 
   return (
-    <div className="bg-[#fafbfc] py-16">
+    <div className="bg-[#fafbfc] px-5 py-10 lg:py-16">
       <div className="max-w-[1700px] mx-auto text-center">
-        <h2 className="text-4xl font-bold text-[#00BFB3] mb-10">
+        <h2 className="text-4xl font-bold text-[#00BFB3] mb-5 md:mb-10">
           Our Services
         </h2>
-        <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+        <div className="grid gap-5 md:gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
           {services.map((service, index) => (
             <div
               key={index}
