@@ -3,7 +3,7 @@ import paperPlane from "../../assets/plane.png";
 
 export default function Newsletter() {
   return (
-    <div className="max-w-[1700px] mx-auto py-16 relative">
+    <div className="max-w-[1700px] mx-auto py-16 relative bg-[#fafbfc]">
       <div className="bg-[#00BFB3] px-5 md:px-28 py-5 md:py-16 flex flex-col md:flex-row items-center justify-between relative">
         {/* Left Side Content */}
         <div className="text-white">

@@ -1,4 +1,4 @@
-// import AboutUs from "../../src/components/home/AboutUs";
+import AboutUs from "../../src/components/home/AboutUs";
 import BestCare from "../../src/components/home/BestCare";
 import Hero from "../../src/components/home/Hero";
 import Newsletter from "../../src/components/home/Newsletter";
@@ -9,7 +9,7 @@ function Home() {
   return (
     <>
       <Hero />
-      {/* <AboutUs /> */}
+      <AboutUs />
       <Services />
       <Reviews />
       <BestCare />
