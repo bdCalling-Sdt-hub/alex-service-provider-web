@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+.swiper-pagination-bullet {
+  background-color: #ccc;
+  opacity: 0.6;
+}
+.swiper-pagination-bullet-active {
+  background-color: #00c0b5 !important;
+  opacity: 1;
+}
