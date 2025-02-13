@@ -4,7 +4,7 @@ function BestCare() {
       <div className="max-w-[1600px] mx-auto flex flex-col md:flex-row gap-10 justify-center items-center">
         <div className="w-1/2 flex flex-col justify-start items-start ml-0 md:ml-20 lg:ml-20">
           <h2 className="w-[450px] text-4xl lg:text-5xl font-bold text-[#0D0D0D]">
-            The Best Eldery Care Center For You
+            The Best Eldery Care Center For You.
           </h2>
           <p className="text-[#6A6D76] text-lg mt-10">
             Lorem ipsum dolor sit amet consectetur. Augue non malesuada placerat
