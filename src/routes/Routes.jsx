@@ -6,6 +6,7 @@ import { HomeSlider } from "../components/home/HomeSlider";
 import HomeWithSearch from "../../pages/home/HomeWithSearch";
 import Care from "../components/home/Care";
 import SearchPage from "../components/home/SearchPage";
+import Frequency from "../components/home/Frequency";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/search",
         element: <SearchPage />,
+      },
+      {
+        path: "/frequency",
+        element: <Frequency />,
       },
     ],
   },

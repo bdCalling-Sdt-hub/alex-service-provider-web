@@ -1,0 +1,185 @@
+import { useState } from "react";
+import { IoSunny, IoMoon } from "react-icons/io5";
+import { FaArrowLeft } from "react-icons/fa";
+import CustomComponent from "../../../pages/shared/CustomComponent";
+import { useNavigate } from "react-router-dom";
+
+export default function Frequency() {
+  const [frequency, setFrequency] = useState("once");
+  const [selectedDate, setSelectedDate] = useState("13");
+  const [duration, setDuration] = useState(2);
+  const [startType, setStartType] = useState("flexible");
+  const [timeSlot, setTimeSlot] = useState("");
+  const navigate = useNavigate();
+
+  const days = [
+    { day: "Mon", date: "13" },
+    { day: "Tue", date: "14" },
+    { day: "Wed", date: "15" },
+    { day: "Thu", date: "16" },
+    { day: "Fri", date: "17" },
+    { day: "Sat", date: "18" },
+  ];
+
+  const timeSlots = [
+    { time: "9-6", icon: <IoSunny className="h-4 w-4" /> },
+    { time: "9-12", icon: <IoSunny className="h-4 w-4" /> },
+    { time: "12-15", icon: <IoSunny className="h-4 w-4" /> },
+    { time: "15-18", icon: <IoSunny className="h-4 w-4" /> },
+    { time: "18-21", icon: <IoMoon className="h-4 w-4" /> },
+    { time: "21-00", icon: <IoMoon className="h-4 w-4" /> },
+  ];
+
+  return (
+    <CustomComponent>
+      <div className=" bg-[#F2F2F2]">
+        <div className="bg-[#00C0B5] h-[200px] flex justify-center items-center gap-5 font-bold">
+          <div className="">
+            <button
+              onClick={() => navigate(-1)}
+              className="inset-y-0 flex items-center bg-white p-2 rounded-full "
+            >
+              <FaArrowLeft
+                className="h-5 w-5 text-[#0D0D0D]"
+                width={20}
+                height={20}
+              />
+            </button>
+          </div>
+          <h1 className="text-3xl text-white font-bold">
+            When do you need it?
+          </h1>
+        </div>
+        <div className="text-white p-6 space-y-8 w-[460px] mx-auto">
+          {/* Frequency Selection */}
+          <section>
+            <div className="flex justify-center items-center text-[#0D0D0D] font-bold">
+              <h2 className="text-3xl mb-4">Frequency</h2>
+            </div>
+            <div className="flex bg-white/10 p-1 rounded-full">
+              <button
+                className={`flex-1 rounded-full px-4 py-2 transition ${
+                  frequency === "once"
+                    ? "bg-[#E6FAF9] text-black border border-[#00C0B5]"
+                    : "text-black"
+                }`}
+                onClick={() => setFrequency("once")}
+              >
+                <div className="flex flex-col">
+                  <p className="font-bold"> Just once</p>
+                  <p>One-Time</p>
+                </div>
+              </button>
+              <button
+                className={`flex-1 rounded-full px-4 py-2 transition ${
+                  frequency === "weekly"
+                    ? "bg-[#E6FAF9] text-black border border-[#00C0B5]"
+                    : "text-black"
+                }`}
+                onClick={() => setFrequency("weekly")}
+              >
+                <div className="flex flex-col">
+                  <p> Weekly</p>
+                  <p>Recurring</p>
+                </div>
+              </button>
+            </div>
+          </section>
+
+          {/* Date Selection */}
+          <section>
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-xl font-bold text-black">January</h2>
+              <button className="text-sm px-3 py-1 rounded-lg text-black border border-[#6A6D76]">
+                Show month
+              </button>
+            </div>
+            <div className="grid grid-cols-6 gap-2">
+              {days.map(({ day, date }) => (
+                <button
+                  key={date}
+                  className={`flex flex-col p-2 h-auto rounded-md border ${
+                    selectedDate === date
+                      ? "bg-[#E6FAF9] border border-[#00C0B5] text-black"
+                      : "border-[#0D0D0D] text-[#0D0D0D]"
+                  }`}
+                  onClick={() => setSelectedDate(date)}
+                >
+                  <span className="text-lg font-semibold">{day}</span>
+                  <span className="text-base font-semibold">{date}</span>
+                </button>
+              ))}
+            </div>
+          </section>
+
+          {/* Duration Slider (Custom) */}
+          <section>
+            <h2 className="text-lg mb-4 text-[#0D0D0D]">
+              Duration <span className="text-[#00C0B5]">{duration}h</span>
+            </h2>
+            <input
+              type="range"
+              min="1"
+              max="8"
+              value={duration}
+              onChange={(e) => setDuration(Number(e.target.value))}
+              className="w-full appearance-none h-2 rounded-lg bg-[#00C0B5]"
+            />
+          </section>
+
+          {/* Start Time */}
+          <section>
+            <h2 className="text-xl mb-4 text-[#0D0D0D]">Start time</h2>
+            <div className="flex bg-white/10 p-1 rounded-full mb-6">
+              <button
+                className={`flex-1 rounded-full px-4 py-2 transition ${
+                  startType === "flexible"
+                    ? "bg-white text-black"
+                    : "text-white"
+                }`}
+                onClick={() => setStartType("flexible")}
+              >
+                Flexible start
+              </button>
+              <button
+                className={`flex-1 rounded-full px-4 py-2 transition ${
+                  startType === "exact" ? "bg-white text-black" : "text-white"
+                }`}
+                onClick={() => setStartType("exact")}
+              >
+                Exact start
+              </button>
+            </div>
+
+            <div className="grid grid-cols-3 gap-3">
+              {timeSlots.map(({ time, icon }) => (
+                <button
+                  key={time}
+                  className={`flex items-center gap-2 border rounded-md px-3 py-2 ${
+                    timeSlot === time
+                      ? "bg-teal-500 border-teal-500 text-white"
+                      : "border-gray-500"
+                  }`}
+                  onClick={() => setTimeSlot(time)}
+                >
+                  {icon}
+                  <span>{time}</span>
+                </button>
+              ))}
+            </div>
+          </section>
+
+          {/* Bottom Buttons */}
+          <div className="p-4 bg-black/90 flex gap-3">
+            <button className="flex-1 bg-gray-700 px-4 py-2 rounded-md">
+              Skip
+            </button>
+            <button className="flex-1 bg-teal-500 hover:bg-teal-600 px-4 py-2 rounded-md">
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </CustomComponent>
+  );
+}
