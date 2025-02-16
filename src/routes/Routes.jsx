@@ -7,6 +7,7 @@ import HomeWithSearch from "../../pages/home/HomeWithSearch";
 import Care from "../components/home/Care";
 import SearchPage from "../components/home/SearchPage";
 import Frequency from "../components/home/Frequency";
+import FindingProfessionals from "../components/home/FindingProfessionals";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/frequency",
         element: <Frequency />,
+      },
+      {
+        path: "/findingProfessionals",
+        element: <FindingProfessionals />,
       },
     ],
   },
