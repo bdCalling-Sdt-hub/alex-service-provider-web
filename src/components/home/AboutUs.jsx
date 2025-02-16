@@ -56,7 +56,7 @@ import { LuSquareCheckBig } from "react-icons/lu";
 
 function AboutUs() {
   return (
-    <section className="bg-[#fafbfc]">
+    <section>
       <div className="max-w-[1700px] mx-auto px-5 md:px-16 lg:px-20 py-10 lg:py-16">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Image Section */}
