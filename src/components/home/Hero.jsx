@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <div className="flex items-center justify-center bg-gray-100 py-10 md:py-16">
+    <div className="flex items-center justify-center bg-[#F2F2F2] py-10 md:py-16">
       <div className="relative w-[300px] md:w-[500px] lg:w-[600px] h-[300px] md:h-[500px] lg:h-[600px]">
         {/* Center Item */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center w-20 h-20 md:w-40 md:h-40 bg-white rounded-full shadow-lg">
