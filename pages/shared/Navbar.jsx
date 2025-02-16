@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Modal } from "antd";
 
 import { FaApple, FaFacebook, FaGoogle } from "react-icons/fa";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
+  const navigate = useNavigate();
 
   const navLinks = [
     { name: "Home", path: "/about" },
@@ -107,7 +108,7 @@ const Navbar = () => {
         <div className="w-full max-w-md mx-auto bg-white  rounded-lg p-6">
           <div className="space-y-1 relative pb-2">
             <div className="flex items-center justify-between mb-5">
-              <h1 className="text-xl font-semibold text-[#1C3E64]">Log in</h1>
+              <h1 className="text-2xl font-bold text-[#1C3E64]">Log in</h1>
               <button
                 className="h-8 w-8 flex items-center justify-center rounded-full bg-gray-200"
                 onClick={() => setIsModalOpen(false)}
@@ -134,14 +135,22 @@ const Navbar = () => {
                 <span className="bg-white px-2 text-gray-500">or</span>
               </div>
             </div>
-            <button className="w-full border border-gray-300 py-2 rounded-lg">
+            <button
+              onClick={() => {
+                setIsModalOpen(false);
+                navigate("/homeSlider");
+              }}
+            className="w-full border border-gray-300 py-2 rounded-lg">
               Log in with email
             </button>
             <p className="text-center text-sm text-[#0D0D0D]">
               By creating an account, I accept the{" "}
-              <Link to="/homeSlider" className="text-blue-500 hover:underline">
+              <button
+              
+                className="text-blue-500 hover:underline"
+              >
                 Terms and Conditions
-              </Link>{" "}
+              </button>{" "}
               and confirm that I have read the{" "}
               <Link to="/" className="text-blue-500 hover:underline">
                 Privacy Policy

@@ -1,10 +1,18 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Hero() {
+  const navigate = useNavigate();
+
   return (
-    <div className="flex items-center justify-center bg-[#F2F2F2] py-10 md:py-16">
+    <div className="flex items-center justify-center py-10 md:py-16">
       <div className="relative w-[300px] md:w-[500px] lg:w-[600px] h-[300px] md:h-[500px] lg:h-[600px]">
         {/* Center Item */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center w-20 h-20 md:w-40 md:h-40 bg-white rounded-full shadow-lg">
-          <img src="/icon/phone.png" alt="Support" className="w-8 md:w-12 h-8 md:h-12" />
+          <img
+            src="/icon/phone.png"
+            alt="Support"
+            className="w-8 md:w-12 h-8 md:h-12"
+          />
           <p className="text-blue-500 font-semibold">Support</p>
         </div>
 
@@ -17,7 +25,13 @@ export default function Hero() {
             top: "25%",
             left: "85%",
           },
-          { name: "Care", icon: "/icon/Group.png", bottom: "15%", left: "85%" },
+          {
+            name: "Care",
+            icon: "/icon/Group.png",
+            bottom: "15%",
+            left: "85%",
+            url: "/care",
+          },
           {
             name: "Handyman",
             icon: "/icon/toy.png",
@@ -35,6 +49,11 @@ export default function Hero() {
           <div
             key={index}
             className="absolute flex flex-col items-center justify-center w-20 h-20 md:w-32 md:h-32 bg-white rounded-full shadow-lg"
+            onClick={() => {
+              if (item.url) {
+                navigate(item.url);
+              }
+            }}
             style={{
               top: item.top,
               bottom: item.bottom,
@@ -42,7 +61,11 @@ export default function Hero() {
               transform: "translate(-50%, -50%)",
             }}
           >
-            <img src={item.icon} alt={item.name} className="w-8 md:w-10 h-8 md:h-10" />
+            <img
+              src={item.icon}
+              alt={item.name}
+              className="w-8 md:w-10 h-8 md:h-10"
+            />
             <p className="text-xs md:text-sm font-medium">{item.name}</p>
           </div>
         ))}
@@ -50,4 +73,3 @@ export default function Hero() {
     </div>
   );
 }
-
