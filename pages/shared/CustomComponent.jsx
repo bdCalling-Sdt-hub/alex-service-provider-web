@@ -8,7 +8,7 @@ import Services from "../../src/components/home/Services";
 
 function CustomComponent({ children }) {
   return (
-    <div className="overflow-x-hidden pt-16">
+    <div className="overflow-x-hidden bg-[#f2f2f2]">
       <div>{children}</div>
       <AboutUs />
       <Services />

@@ -1,5 +1,6 @@
 import * as React from "react";
 import CustomComponent from "../../../pages/shared/CustomComponent";
+import { useNavigate } from "react-router-dom";
 
 const slides = [
   {
@@ -24,6 +25,7 @@ const slides = [
 
 export function HomeSlider() {
   const [currentSlide, setCurrentSlide] = React.useState(0);
+  const navigate = useNavigate();
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -33,7 +35,14 @@ export function HomeSlider() {
     <CustomComponent>
       <div className="relative w-[360px] h-[680px] mx-auto text-white flex flex-col items-center justify-center px-5 py-10">
         {/* Skip button */}
-        <button className="absolute right-4 top-4 text-teal-400">Skip</button>
+        <button
+          onClick={() => {
+            navigate("/homeWithSearch");
+          }}
+          className="absolute right-4 top-4 text-teal-400"
+        >
+          Skip
+        </button>
 
         {/* Image */}
         <div className="flex-1 flex items-center justify-center">
