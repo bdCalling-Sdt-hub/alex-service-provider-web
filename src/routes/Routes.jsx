@@ -4,6 +4,7 @@ import SignIn from "../../pages/auth/SignIn";
 import Home from "../../pages/home/Home";
 import { HomeSlider } from "../components/home/HomeSlider";
 import HomeWithSearch from "../../pages/home/HomeWithSearch";
+import Care from "../components/home/Care";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/homeWithSearch",
         element: <HomeWithSearch />,
+      },
+      {
+        path: "/care",
+        element: <Care />,
       },
     ],
   },
