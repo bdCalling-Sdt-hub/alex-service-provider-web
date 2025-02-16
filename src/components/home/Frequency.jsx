@@ -25,6 +25,8 @@ export default function Frequency() {
     { time: "9-6", icon: <IoSunny className="h-4 w-4" /> },
     { time: "9-12", icon: <IoSunny className="h-4 w-4" /> },
     { time: "12-15", icon: <IoSunny className="h-4 w-4" /> },
+  ];
+  const timeSlots2 = [
     { time: "15-18", icon: <IoSunny className="h-4 w-4" /> },
     { time: "18-21", icon: <IoMoon className="h-4 w-4" /> },
     { time: "21-00", icon: <IoMoon className="h-4 w-4" /> },
@@ -98,7 +100,7 @@ export default function Frequency() {
               {days.map(({ day, date }) => (
                 <button
                   key={date}
-                  className={`flex flex-col p-2 h-auto rounded-md border ${
+                  className={`flex flex-col justify-center items-center p-2 h-auto rounded-md border ${
                     selectedDate === date
                       ? "bg-[#E6FAF9] border border-[#00C0B5] text-black"
                       : "border-[#0D0D0D] text-[#0D0D0D]"
@@ -129,13 +131,15 @@ export default function Frequency() {
 
           {/* Start Time */}
           <section>
-            <h2 className="text-xl mb-4 text-[#0D0D0D]">Start time</h2>
+            <h2 className="text-xl mb-4 text-[#0D0D0D] font-bold">
+              Start time
+            </h2>
             <div className="flex bg-white/10 p-1 rounded-full mb-6">
               <button
-                className={`flex-1 rounded-full px-4 py-2 transition ${
+                className={`flex-1 rounded-full px-4 py-2 transition  ${
                   startType === "flexible"
-                    ? "bg-white text-black"
-                    : "text-white"
+                    ? "bg-white text-[#0D0D0D] shadow-xl"
+                    : "text-[#0D0D0D]"
                 }`}
                 onClick={() => setStartType("flexible")}
               >
@@ -143,38 +147,65 @@ export default function Frequency() {
               </button>
               <button
                 className={`flex-1 rounded-full px-4 py-2 transition ${
-                  startType === "exact" ? "bg-white text-black" : "text-white"
+                  startType === "exact"
+                    ? "bg-white text-[#0D0D0D] shadow-xl"
+                    : "text-[#0D0D0D]"
                 }`}
                 onClick={() => setStartType("exact")}
               >
                 Exact start
               </button>
             </div>
-
-            <div className="grid grid-cols-3 gap-3">
-              {timeSlots.map(({ time, icon }) => (
-                <button
-                  key={time}
-                  className={`flex items-center gap-2 border rounded-md px-3 py-2 ${
-                    timeSlot === time
-                      ? "bg-teal-500 border-teal-500 text-white"
-                      : "border-gray-500"
-                  }`}
-                  onClick={() => setTimeSlot(time)}
-                >
-                  {icon}
-                  <span>{time}</span>
-                </button>
-              ))}
+            {/* .............................................. */}
+            {/* Time Slot Selection */}
+            <div className="space-y-2">
+              <h1 className="text-[#0D0D0D] text-xl font-semibold">Morning</h1>
+              <div className="grid grid-cols-3 gap-3">
+                {timeSlots.map(({ time, icon }) => (
+                  <button
+                    key={time}
+                    className={`flex flex-col justify-center items-center gap-2 border border-[#0D0D0D] text-[#0D0D0D] rounded-md px-3 py-2 ${
+                      timeSlot === time
+                        ? " bg-[#E6FAF9] border-[#00C0B5] text-[#0D0D0D]"
+                        : "border-[#0D0D0D]"
+                    }`}
+                    onClick={() => setTimeSlot(time)}
+                  >
+                    {icon}
+                    <span>{time}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="space-y-2 mt-5">
+              <h1 className="text-[#0D0D0D] text-xl font-semibold">
+                Afternoon
+              </h1>
+              <div className="grid grid-cols-3 gap-3">
+                {timeSlots2.map(({ time, icon }) => (
+                  <button
+                    key={time}
+                    className={`flex items-center gap-2 border rounded-md px-3 py-2 ${
+                      timeSlot === time
+                        ? "bg-[#E6FAF9] border-[#00C0B5] text-[#0D0D0D]"
+                        : "border-[#0D0D0D] text-[#0D0D0D]"
+                    }`}
+                    onClick={() => setTimeSlot(time)}
+                  >
+                    {icon}
+                    <span>{time}</span>
+                  </button>
+                ))}
+              </div>
             </div>
           </section>
 
           {/* Bottom Buttons */}
-          <div className="p-4 bg-black/90 flex gap-3">
-            <button className="flex-1 bg-gray-700 px-4 py-2 rounded-md">
+          <div className="p-4 flex gap-3">
+            <button className="flex-1 border border-[#0D0D0D] text-[#0D0D0D] px-4 py-2 rounded-md">
               Skip
             </button>
-            <button className="flex-1 bg-teal-500 hover:bg-teal-600 px-4 py-2 rounded-md">
+            <button className="flex-1 bg-[#00C0B5] text-white px-4 py-2 rounded-md">
               Search
             </button>
           </div>
