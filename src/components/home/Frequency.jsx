@@ -31,6 +31,14 @@ export default function Frequency() {
     { time: "18-21", icon: <IoMoon className="h-4 w-4" /> },
     { time: "21-00", icon: <IoMoon className="h-4 w-4" /> },
   ];
+  const singleDays = [
+    { day: "Mon" },
+    { day: "Tue" },
+    { day: "Wed" },
+    { day: "Thu" },
+    { day: "Fri" },
+    { day: "Sat" },
+  ];
 
   return (
     <CustomComponent>
@@ -88,7 +96,7 @@ export default function Frequency() {
             </div>
           </section>
 
-          {/* Date Selection */}
+          {/* Date Selection monthly */}
           <section>
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-bold text-black">January</h2>
@@ -109,6 +117,29 @@ export default function Frequency() {
                 >
                   <span className="text-lg font-semibold">{day}</span>
                   <span className="text-base font-semibold">{date}</span>
+                </button>
+              ))}
+            </div>
+          </section>
+          {/* Date Selection day wise */}
+          <section>
+            <div className="flex justify-start items-start mb-4">
+              <h2 className="text-xl font-bold text-black">
+                Day(s) of the week
+              </h2>
+            </div>
+            <div className="grid grid-cols-6 gap-2">
+              {singleDays.map(({ day, index }) => (
+                <button
+                  key={index}
+                  className={`flex flex-col justify-center items-center p-2 h-auto rounded-md border ${
+                    selectedDate === day
+                      ? "bg-[#E6FAF9] border border-[#00C0B5] text-black"
+                      : "border-[#0D0D0D] text-[#0D0D0D]"
+                  }`}
+                  onClick={() => setSelectedDate(day)}
+                >
+                  <span className="text-lg font-semibold">{day}</span>
                 </button>
               ))}
             </div>
@@ -185,7 +216,7 @@ export default function Frequency() {
                 {timeSlots2.map(({ time, icon }) => (
                   <button
                     key={time}
-                    className={`flex items-center gap-2 border rounded-md px-3 py-2 ${
+                    className={`flex flex-col justify-center items-center gap-2 border rounded-md px-3 py-2 ${
                       timeSlot === time
                         ? "bg-[#E6FAF9] border-[#00C0B5] text-[#0D0D0D]"
                         : "border-[#0D0D0D] text-[#0D0D0D]"
