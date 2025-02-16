@@ -40,6 +40,21 @@ export default function Frequency() {
     { day: "Sat" },
   ];
 
+  const [hour, setHour] = useState(1);
+  const [minute, setMinute] = useState(0);
+  const [meridian, setMeridian] = useState("AM");
+
+  const increaseHour = () => setHour((prev) => (prev === 12 ? 1 : prev + 1));
+  const decreaseHour = () => setHour((prev) => (prev === 1 ? 12 : prev - 1));
+
+  const increaseMinute = () =>
+    setMinute((prev) => (prev === 59 ? 0 : prev + 1));
+  const decreaseMinute = () =>
+    setMinute((prev) => (prev === 0 ? 59 : prev - 1));
+
+  const toggleMeridian = () =>
+    setMeridian((prev) => (prev === "AM" ? "PM" : "AM"));
+
   return (
     <CustomComponent>
       <div className=" bg-[#F2F2F2]">
@@ -227,6 +242,42 @@ export default function Frequency() {
                     <span>{time}</span>
                   </button>
                 ))}
+              </div>
+            </div>
+            <div className="flex justify-center items-center border-gray-400 text-[#0D0D0D] p-5 bg-white mt-5 rounded-lg">
+              <div className="flex justify-center items-center gap-5">
+                <div className="flex flex-col items-center">
+                  <button onClick={increaseHour} className="text-[#0D0D0D]">
+                    ▲
+                  </button>
+                  <span className="text-2xl">
+                    {String(hour).padStart(2, "0")}
+                  </span>
+                  <button onClick={decreaseHour} className="text-[#0D0D0D]">
+                    ▼
+                  </button>
+                </div>
+                <span className="text-2xl">:</span>
+                <div className="flex flex-col items-center">
+                  <button onClick={increaseMinute} className="text-[#0D0D0D]">
+                    ▲
+                  </button>
+                  <span className="text-2xl">
+                    {String(minute).padStart(2, "0")}
+                  </span>
+                  <button onClick={decreaseMinute} className="text-[#0D0D0D]">
+                    ▼
+                  </button>
+                </div>
+                <div className="flex flex-col items-center">
+                  <button onClick={toggleMeridian} className="text-[#0D0D0D]">
+                    ▲
+                  </button>
+                  <span className="text-2xl">{meridian.toLowerCase()}</span>
+                  <button onClick={toggleMeridian} className="text-[#0D0D0D]">
+                    ▼
+                  </button>
+                </div>
               </div>
             </div>
           </section>
