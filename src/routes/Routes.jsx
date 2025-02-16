@@ -5,6 +5,7 @@ import Home from "../../pages/home/Home";
 import { HomeSlider } from "../components/home/HomeSlider";
 import HomeWithSearch from "../../pages/home/HomeWithSearch";
 import Care from "../components/home/Care";
+import SearchPage from "../components/home/SearchPage";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/care",
         element: <Care />,
+      },
+      {
+        path: "/search",
+        element: <SearchPage />,
       },
     ],
   },

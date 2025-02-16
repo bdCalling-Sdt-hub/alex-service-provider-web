@@ -6,24 +6,29 @@ import { Divider, Modal } from "antd";
 import { useState } from "react";
 import { FaPencil } from "react-icons/fa6";
 import { FaCheck } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function HomeWithSearch() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [address, setAddress] = useState(""); 
-  const [savedAddress, setSavedAddress] = useState(""); 
+  const [address, setAddress] = useState("");
+  const [savedAddress, setSavedAddress] = useState("");
+  const navigate = useNavigate();
 
   const handleAddAddress = () => {
     if (address.trim() !== "") {
-      setSavedAddress(address); 
-      setIsModalOpen(false); 
+      setSavedAddress(address);
+      setIsModalOpen(false);
     }
   };
 
   return (
     <CustomComponent>
       <div className="my-5 flex justify-end items-center gap-5 px-5 md:px-20 lg:px-24">
-        <div className="bg-gray-100 p-2 rounded-full">
-          <IoSearchSharp className="w-8 h-8 text-[#0D0D0D]" />
+        <div className="bg-gray-100 p-2 rounded-full cursor-pointer">
+          <IoSearchSharp
+            onClick={() => navigate("/search")}
+            className="w-8 h-8 text-[#0D0D0D] transition-transform duration-200 hover:scale-110"
+          />
         </div>
         <div className="relative bg-gray-100 p-2 rounded-full">
           <IoNotifications className="w-8 h-8 text-[#0D0D0D]" />
@@ -32,23 +37,21 @@ function HomeWithSearch() {
           </div>
         </div>
       </div>
-
       <Hero />
+      {/* Display Address if saved, else show "+ Add address" */}
+      <div className="flex justify-center items-center gap-2">
+        {savedAddress ? (
+          <p className="text-2xl text-[#1C3E64] font-bold">{savedAddress}</p>
+        ) : (
+          <p className="text-3xl text-[#00C0B5] font-bold">+ Add address</p>
+        )}
 
-    {/* Display Address if saved, else show "+ Add address" */}
-<div className="flex justify-center items-center gap-2">
-  {savedAddress ? (
-    <p className="text-2xl text-[#1C3E64] font-bold">{savedAddress}</p>
-  ) : (
-    <p className="text-3xl text-[#00C0B5] font-bold">+ Add address</p>
-  )}
-  
-  {!savedAddress && (
-    <button onClick={() => setIsModalOpen(true)}>
-      <RiArrowDownSLine className="w-8 h-8" />
-    </button>
-  )}
-</div>
+        {!savedAddress && (
+          <button onClick={() => setIsModalOpen(true)}>
+            <RiArrowDownSLine className="w-8 h-8" />
+          </button>
+        )}
+      </div>
 
       <Modal open={isModalOpen} centered footer={null} closable={false}>
         <div className="w-full max-w-md mx-auto bg-white rounded-lg p-6">
