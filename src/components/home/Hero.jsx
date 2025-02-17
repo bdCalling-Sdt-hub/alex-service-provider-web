@@ -18,12 +18,19 @@ export default function Hero() {
 
         {/* Circular Items */}
         {[
-          { name: "Home", icon: "/icon/house.png", top: "10%", left: "50%" },
+          {
+            name: "Home",
+            icon: "/icon/house.png",
+            top: "10%",
+            left: "50%",
+            url: "/frequency",
+          },
           {
             name: "Cleaning",
             icon: "/icon/spray.png",
             top: "25%",
             left: "85%",
+            url: "/frequency",
           },
           {
             name: "Care",
@@ -37,14 +44,22 @@ export default function Hero() {
             icon: "/icon/toy.png",
             bottom: "-10%",
             left: "50%",
+            url: "/frequency",
           },
           {
             name: "Others",
             icon: "/icon/prize.png",
             bottom: "15%",
             left: "15%",
+            url: "/frequency",
           },
-          { name: "Pets", icon: "/icon/icon.png", top: "25%", left: "20%" },
+          {
+            name: "Pets",
+            icon: "/icon/icon.png",
+            top: "25%",
+            left: "20%",
+            url: "/frequency",
+          },
         ].map((item, index) => (
           <div
             key={index}
