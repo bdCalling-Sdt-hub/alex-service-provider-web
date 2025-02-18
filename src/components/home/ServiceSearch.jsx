@@ -11,7 +11,7 @@ import { AiOutlineRight, AiOutlineDown } from "react-icons/ai";
 function ServiceSearch() {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
-  const [isFocused, setIsFocused] = useState(false);
+  const [, setIsFocused] = useState(false);
   const [filter, setFilter] = useState("When");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
