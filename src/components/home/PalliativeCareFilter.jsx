@@ -72,7 +72,6 @@ function PalliativeCareFilter() {
               centered
               footer={null}
               closable={false}
-              scro
             >
               <div className="w-full max-w-md h-[70vh] mx-auto bg-white  rounded-lg p-6 overflow-y-auto">
                 <div className="flex justify-start">
