@@ -33,11 +33,11 @@ export default function FindingProfessionalsLoader() {
     <CustomComponent>
       <div className="flex flex-col items-center p-6">
         {reviews.map((review) => (
-          <ReviewCard key={review.id} review={review} />
+          <ReviewCard  key={review.id} review={review} />
         ))}
         <h2 className="text-[#0D0D0D] text-xl mt-4">
-          Finding{" "}
-          <span className="font-bold text-3xl text-blue-900">Elderly care</span>{" "}
+          Finding
+          <span className="font-bold text-3xl text-blue-900">Elderly care</span>
           professionals
         </h2>
       </div>

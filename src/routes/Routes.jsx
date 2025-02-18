@@ -10,6 +10,7 @@ import Frequency from "../components/home/Frequency";
 import FindingProfessionalsLoader from "../components/home/FindingProfessionalsLoader";
 import ServiceSearch from "../components/home/ServiceSearch";
 import PalliativeCareFilter from "../components/home/PalliativeCareFilter";
+import ProfessionalProfile from "../components/home/professionalProfile";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: "/palliativeCareFilter",
         element: <PalliativeCareFilter />,
+      },
+      {
+        path: "/professionalProfile",
+        element: <ProfessionalProfile />,
       },
     ],
   },

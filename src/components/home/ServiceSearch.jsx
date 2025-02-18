@@ -168,7 +168,11 @@ function ServiceSearch() {
           </Modal>
         </div>
         <div className="space-y-3 mt-5">
-          <ServiceCard />
+          <ServiceCard
+            onClick={() => {
+              navigate("/ProfessionalProfile");
+            }}
+          />
           <ServiceCard />
           <ServiceCard />
         </div>
@@ -180,10 +184,16 @@ function ServiceSearch() {
 export default ServiceSearch;
 
 const ServiceCard = () => {
+  const navigate = useNavigate();
   return (
     <div className="bg-white p-4 rounded-2xl shadow-lg flex justify-between items-center w-full">
       {/* Left Section: Profile */}
-      <div className="flex flex-col gap-2">
+      <div
+        onClick={() => {
+          navigate("/ProfessionalProfile");
+        }}
+        className="flex flex-col gap-2"
+      >
         <div className="flex items-center gap-5">
           <img
             src="https://avatar.iran.liara.run/public/42"
