@@ -7,7 +7,10 @@ import HomeWithSearch from "../../pages/home/HomeWithSearch";
 import Care from "../components/home/Care";
 import SearchPage from "../components/home/SearchPage";
 import Frequency from "../components/home/Frequency";
-import FindingProfessionals from "../components/home/FindingProfessionals";
+import FindingProfessionalsLoader from "../components/home/FindingProfessionalsLoader";
+import ServiceSearch from "../components/home/ServiceSearch";
+import PalliativeCareFilter from "../components/home/PalliativeCareFilter";
+import ProfessionalProfile from "../components/home/professionalProfile";
 
 const router = createBrowserRouter([
   {
@@ -45,7 +48,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/findingProfessionals",
-        element: <FindingProfessionals />,
+        element: <FindingProfessionalsLoader />,
+      },
+      {
+        path: "/serviceSearch",
+        element: <ServiceSearch />,
+      },
+      {
+        path: "/palliativeCareFilter",
+        element: <PalliativeCareFilter />,
+      },
+      {
+        path: "/professionalProfile",
+        element: <ProfessionalProfile />,
       },
     ],
   },

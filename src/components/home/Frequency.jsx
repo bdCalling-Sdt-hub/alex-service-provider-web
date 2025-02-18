@@ -285,13 +285,15 @@ export default function Frequency() {
           {/* Bottom Buttons */}
           <div className="p-4 flex gap-3">
             <button
-             onClick={() => navigate("/")}
-            className="flex-1 border border-[#0D0D0D] text-[#0D0D0D] px-4 py-2 rounded-md">
+              onClick={() => navigate("/")}
+              className="flex-1 border border-[#0D0D0D] text-[#0D0D0D] px-4 py-2 rounded-md"
+            >
               Skip
             </button>
             <button
-             onClick={() => navigate("/findingProfessionals")}
-            className="flex-1 bg-[#00C0B5] text-white px-4 py-2 rounded-md">
+              onClick={() => navigate("/serviceSearch")}
+              className="flex-1 bg-[#00C0B5] text-white px-4 py-2 rounded-md"
+            >
               Search
             </button>
           </div>
