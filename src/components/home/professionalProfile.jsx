@@ -6,7 +6,6 @@ import { BsDownload } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { FaSyncAlt, FaCheckCircle } from "react-icons/fa";
-import { IoIosClose } from "react-icons/io";
 import { GiArcheryTarget } from "react-icons/gi";
 
 export default function ProfessionalProfile() {
