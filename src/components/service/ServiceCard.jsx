@@ -1,0 +1,70 @@
+import PropTypes from "prop-types";
+import { useState } from "react";
+import { FaCalendarAlt, FaClock, FaPhoneAlt } from "react-icons/fa";
+import cleanerImg from "../../assets/cleaner.jpg";
+import RatingModal from "./RatingModal";
+
+export default function ServiceCard({ title, time, date, image, type }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  return (
+    <>
+      <div className="w-[400px] h-[150px] bg-white rounded-2xl shadow-lg p-4 flex items-center">
+        <img
+          src={image ? image : cleanerImg}
+          alt={title}
+          className="w-20 h-20 object-cover rounded-lg"
+        />
+        <div className="ml-4 flex-grow">
+          <h3 className="text-lg font-semibold text-blue-600">{title}</h3>
+          <div className="flex items-center text-gray-600 text-sm mt-1">
+            <FaClock className="w-4 h-4 mr-2 text-gray-500" />
+            {time}
+          </div>
+          <div className="flex items-center text-gray-600 text-sm mt-1">
+            <FaCalendarAlt className="w-4 h-4 mr-2 text-gray-500" />
+            {date}
+          </div>
+          <div className="mt-2">
+            {type === "upcoming" && (
+              <span className="text-xs text-[#00C0B5] bg-[#D9FFFD] py-1 px-3 rounded-md">
+                Pending acceptance
+              </span>
+            )}
+            {type === "past" && (
+              <div className="flex gap-2">
+                <button
+                  size="small"
+                  className="text-xs text-teal-400 hover:text-teal-500 bg-teal-100 hover:bg-teal-200 py-1 px-3 rounded-md cursor-pointer"
+                  onClick={() => setIsModalOpen(true)}
+                >
+                  Rating
+                </button>
+                <button className="flex items-center text-xs text-blue-600 bg-blue-100 py-1 px-3 rounded-md">
+                  <FaPhoneAlt className="w-4 h-4 mr-1" /> Need Support
+                  Immediately
+                </button>
+              </div>
+            )}
+            {type === "cancelled" && (
+              <span className="text-xs text-red-600 bg-red-100 py-1 px-3 rounded-md">
+                Cancel
+              </span>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Rating Modal - Opens when "Rating" is clicked */}
+      <RatingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
+  );
+}
+
+ServiceCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  type: PropTypes.oneOf(["upcoming", "past", "cancelled"]).isRequired,
+};
