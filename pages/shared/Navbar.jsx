@@ -1,20 +1,21 @@
+import { Modal } from "antd";
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
-import { Modal } from "antd";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { FaApple, FaFacebook, FaGoogle } from "react-icons/fa";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const navLinks = [
-    { name: "Home", path: "/about" },
-    { name: "Service", path: "/projects" },
-    { name: "Favourite", path: "/skills" },
+    { name: "Home", path: "/" },
+    { name: "Service", path: "/service" },
+    { name: "Favourite", path: "/favourite" },
     { name: "Inbox", path: "/blogs" },
-    { name: "Profile", path: "/certification" },
+    { name: "Profile", path: "/profile" },
   ];
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,7 +34,11 @@ const Navbar = () => {
             <Link
               key={name}
               to={path}
-              className="hover:text-[#00BFB3] transition-all cursor-pointer"
+              className={`${
+                location.pathname === path
+                  ? "text-[#00BFB3] font-bold"
+                  : "hover:text-[#00BFB3]"
+              } transition-all cursor-pointer`}
             >
               {name}
             </Link>
@@ -140,15 +145,13 @@ const Navbar = () => {
                 setIsModalOpen(false);
                 navigate("/homeSlider");
               }}
-            className="w-full border border-gray-300 py-2 rounded-lg">
+              className="w-full border border-gray-300 py-2 rounded-lg"
+            >
               Log in with email
             </button>
             <p className="text-center text-sm text-[#0D0D0D]">
               By creating an account, I accept the{" "}
-              <button
-              
-                className="text-blue-500 hover:underline"
-              >
+              <button className="text-blue-500 hover:underline">
                 Terms and Conditions
               </button>{" "}
               and confirm that I have read the{" "}
