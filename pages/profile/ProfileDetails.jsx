@@ -8,7 +8,7 @@ export default function ProfileDetails() {
   const [email, setEmail] = useState("raju@gmail.com");
   const [phone, setPhone] = useState("+880 1840-560614");
   const [profileImage, setProfileImage] = useState(
-    "https://randomuser.me/api/portraits/men/1.jpg"
+    "https://avatar.iran.liara.run/public/32"
   );
 
   // Handle Image Upload
@@ -48,31 +48,31 @@ export default function ProfileDetails() {
         <div className="mt-6 space-y-4">
           <input
             type="text"
-            className="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-800 focus:ring-2 focus:ring-[#00C0B5] outline-none"
+            className="w-full rounded-lg py-2 px-3 text-gray-800 outline-none shadow-lg bg-[#fff]"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
           <input
             type="email"
-            className="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-800 focus:ring-2 focus:ring-[#00C0B5] outline-none"
+            className="w-full rounded-lg py-2 px-3 text-gray-800 outline-none shadow-lg bg-[#fff]"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="tel"
-            className="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-800 focus:ring-2 focus:ring-[#00C0B5] outline-none"
+            className="w-full rounded-lg py-2 px-3 text-gray-800 outline-none shadow-lg bg-[#fff]"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
         </div>
 
         {/* Save Button */}
-        <button className="w-full bg-[#00C0B5] text-white text-lg font-semibold py-2 mt-6 rounded-lg hover:bg-[#009a95] transition">
+        <button className="w-full bg-[#00C0B5] text-white text-lg font-semibold py-2 mt-6 rounded-lg">
           Save
         </button>
 
         {/* Delete Account */}
-        <button className="block w-full text-center text-red-600 mt-4 underline hover:text-red-800">
+        <button className="block w-full text-center text-[#0D0D0D] mt-4 underline">
           Delete account permanently
         </button>
       </div>

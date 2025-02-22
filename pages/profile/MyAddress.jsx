@@ -1,10 +1,11 @@
-import { Input, Modal } from "antd";
+import { Modal } from "antd";
 import { useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import ProfileBackButton from "../../src/components/profile/ProfileBackButton";
 import CustomComponent from "../shared/CustomComponent";
 
 export default function MyAddresses() {
+  const [name, setName] = useState();
   const [addresses, setAddresses] = useState([
     {
       id: 1,
@@ -39,7 +40,7 @@ export default function MyAddresses() {
     <CustomComponent>
       <div className="w-[400px] mx-auto my-16">
         <ProfileBackButton title="My Addresses" />
-        <h2 className="font-medium text-gray-500 mb-4">Your Addresses</h2>
+        <h2 className="font-medium text-[#0D0D0D] mb-4">Your Addresses</h2>
 
         {/* Address Cards */}
         {addresses.map((addr) => (
@@ -48,14 +49,14 @@ export default function MyAddresses() {
             className="bg-white rounded-xl shadow-md p-4 flex justify-between items-center mb-4 relative"
           >
             <div>
-              <h3 className="text-lg font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-[#0D0D0D] mb-1">
                 {addr.name}
               </h3>
               <p className="text-gray-600 text-sm">{addr.address}</p>
               <p className="text-gray-600 text-sm">{addr.phone}</p>
             </div>
             <button
-              className="text-gray-500 hover:text-gray-700 relative"
+              className="text-[#0D0D0D] relative"
               onClick={() => setMenuOpen(menuOpen === addr.id ? null : addr.id)}
             >
               <BsThreeDotsVertical className="w-5 h-5" />
@@ -143,36 +144,56 @@ export default function MyAddresses() {
           <label className="block text-lg font-medium text-gray-800">
             Name
           </label>
-          <Input
+          <input
+            type="text"
             placeholder="Enter Your Name"
-            defaultValue={selectedAddress?.name || ""}
+            className="w-full rounded-lg py-3 px-3 text-gray-800 outline-none shadow-lg bg-[#fff]"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
 
           <label className="block text-lg font-medium text-gray-800">
             Address
           </label>
-          <Input.TextArea
+          <textarea
+            name="name"
+            id="name"
             placeholder="Enter Your Address"
-            defaultValue={selectedAddress?.address || ""}
-            rows={2}
+         
+            className="w-full rounded-lg py-3 px-3 text-gray-800 outline-none shadow-lg bg-[#fff]"
           />
 
           <label className="block text-lg font-medium text-gray-800">
             City
           </label>
-          <Input placeholder="Enter Your City" />
+          <input
+            type="text"
+            placeholder="Enter Your City Name"
+            className="w-full rounded-lg py-2 px-3 text-gray-800 outline-none shadow-lg bg-[#fff]"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
 
           <label className="block text-lg font-medium text-gray-800">
             Country
           </label>
-          <Input placeholder="Enter Your Country" />
+          <input
+            type="text"
+            placeholder="Enter Your Country Name"
+            className="w-full rounded-lg py-2 px-3 text-gray-800 outline-none shadow-lg bg-[#fff]"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
 
           <label className="block text-lg font-medium text-gray-800">
             Phone Number
           </label>
-          <Input
-            placeholder="Enter Your Phone Number"
-            defaultValue={selectedAddress?.phone || ""}
+          <input
+            type="number"
+            placeholder="Enter Your Number"
+            className="w-full rounded-lg py-2 px-3 text-gray-800 outline-none shadow-lg bg-[#fff]"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
 
           <button

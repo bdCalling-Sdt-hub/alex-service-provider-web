@@ -23,7 +23,7 @@ export default function Language() {
         {/* Language Dropdown */}
         <div className="relative w-full">
           <select
-            className="w-full border border-gray-300 rounded-lg py-3 px-4 text-gray-800 appearance-none bg-white focus:ring-2 focus:ring-[#00C0B5] outline-none cursor-pointer"
+            className="w-full shadow-lg rounded-lg py-3 px-4 text-gray-800 appearance-none bg-white outline-none cursor-pointer"
             value={language}
             onChange={(e) => setLanguage(e.target.value)}
           >

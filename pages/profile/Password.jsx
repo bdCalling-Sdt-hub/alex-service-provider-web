@@ -21,7 +21,7 @@ export default function PasswordChange() {
         <div className="relative w-full mb-4">
           <input
             type={showOldPassword ? "text" : "password"}
-            className="w-full border border-gray-300 rounded-lg py-3 px-4 text-gray-800 focus:ring-2 focus:ring-[#00C0B5] outline-none"
+            className="w-full shadow-lg bg-[#fff] rounded-lg py-3 px-4 text-gray-800 outline-none"
             placeholder="Password"
           />
           <button
@@ -40,7 +40,7 @@ export default function PasswordChange() {
         <div className="relative w-full mb-4">
           <input
             type={showNewPassword ? "text" : "password"}
-            className="w-full border border-gray-300 rounded-lg py-3 px-4 text-gray-800 focus:ring-2 focus:ring-[#00C0B5] outline-none"
+            className="w-full shadow-lg bg-[#fff] rounded-lg py-3 px-4 text-gray-800 outline-none"
             placeholder="Password"
           />
           <button
@@ -59,7 +59,7 @@ export default function PasswordChange() {
         <div className="relative w-full mb-6">
           <input
             type={showConfirmPassword ? "text" : "password"}
-            className="w-full border border-gray-300 rounded-lg py-3 px-4 text-gray-800 focus:ring-2 focus:ring-[#00C0B5] outline-none"
+            className="w-full shadow-lg bg-[#fff] rounded-lg py-3 px-4 text-gray-800 outline-none"
             placeholder="Password"
           />
           <button
