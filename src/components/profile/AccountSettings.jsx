@@ -44,11 +44,11 @@ export default function AccountSettings() {
       {/* Profile Header */}
       <div className="flex items-center space-x-3">
         <img
-          src="https://randomuser.me/api/portraits/men/45.jpg"
+          src="https://avatar.iran.liara.run/public/32"
           alt="Profile"
           className="w-14 h-14 rounded-full object-cover"
         />
-        <h2 className="text-lg font-semibold text-gray-800">Mr. Raju</h2>
+        <h2 className="text-xl font-bold text-gray-800">Mr. Raju</h2>
       </div>
 
       {/* Upgrade Button */}
@@ -66,13 +66,13 @@ export default function AccountSettings() {
           <Link
             to={item.path}
             key={index}
-            className="flex justify-between items-center px-4 py-3 border-b last:border-none hover:bg-gray-100 cursor-pointer"
+            className="flex justify-between items-center px-4 py-3 border-b-[3px] border-[#6A6D76] last:border-none hover:bg-gray-100 cursor-pointer"
           >
             <div className="flex items-center space-x-3 text-gray-700">
               <span className="text-[#00C0B5] text-lg">{item.icon}</span>
               <span>{item.label}</span>
             </div>
-            <FaChevronRight className="text-gray-400" />
+            <FaChevronRight className="text-[#0D0D0D]" />
           </Link>
         ))}
       </div>

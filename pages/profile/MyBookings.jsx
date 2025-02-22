@@ -5,7 +5,7 @@ export default function MyBooking() {
   const booking = {
     service: "Elderly Care",
     price: "$10.00 hrs",
-    image: "https://randomuser.me/api/portraits/men/1.jpg", // Replace with actual image URL
+    image: "https://randomuser.me/api/portraits/men/1.jpg",
     paidDate: "12/01/2025",
     serviceDate: "13/01/2025",
     cancelledBy: "NM Sujon",
@@ -21,22 +21,22 @@ export default function MyBooking() {
           <img
             src={booking.image}
             alt={booking.service}
-            className="w-12 h-12 rounded-md object-cover"
+            className="w-24 h-24 rounded-md object-cover"
           />
           <div className="flex-1">
             <div className="flex justify-between items-center">
-              <h3 className="text-lg font-semibold text-gray-900">
+              <h3 className="text-lg font-semibold text-[#0D0D0D]">
                 {booking.service}
               </h3>
-              <span className="text-blue-500 font-semibold">
+              <span className="text-[#0084BF] font-semibold text-xs">
                 {booking.price}
               </span>
             </div>
-            <p className="text-gray-600 text-sm">Paid on {booking.paidDate}</p>
-            <p className="text-gray-600 text-sm">
+            <p className="text-[#6A6D76] text-sm">Paid on {booking.paidDate}</p>
+            <p className="text-[#6A6D76] text-sm">
               Service date: {booking.serviceDate}
             </p>
-            <p className="text-red-600 text-sm font-medium">
+            <p className="text-red-400 text-sm">
               Cancelled by {booking.cancelledBy}
             </p>
           </div>

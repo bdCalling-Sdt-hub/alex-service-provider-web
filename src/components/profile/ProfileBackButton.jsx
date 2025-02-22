@@ -5,12 +5,12 @@ import { useNavigate } from "react-router-dom";
 export default function ProfileBackButton({ title = "" }) {
   const navigate = useNavigate();
   return (
-    <button className="flex items-center font-bold text-lg text-gray-800 mb-4">
+    <button className="flex items-center font-bold text-xl text-[#0D0D0D] mb-4 gap-5">
       <AiOutlineArrowLeft
         onClick={() => navigate(-1)}
-        className="w-5 h-5 mr-2 cursor-pointer"
+        className="w-5 h-5 mr-2 cursor-pointer text-[#0D0D0D] font-bold"
       />
-      <span>{title}</span>
+      <span className="text-2xl font-bold text-[#0D0D0D]">{title} </span>
     </button>
   );
 }
