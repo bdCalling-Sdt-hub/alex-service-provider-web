@@ -40,7 +40,7 @@ export default function AccountSettings() {
   ];
 
   return (
-    <div className="w-[400px]">
+    <div className="w-full  md:w-[400px] lg:w-[400px] px-5">
       {/* Profile Header */}
       <div className="flex items-center space-x-3">
         <img

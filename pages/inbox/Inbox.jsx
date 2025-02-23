@@ -117,6 +117,7 @@ function Inbox() {
               <button
                 onClick={() => {
                   setIsModalOpen(true);
+                  navigate("/callScreen");
                 }}
                 className="w-full bg-[#00C0B5] text-white rounded-lg px-4 py-3 flex items-center justify-center gap-2 mt-5"
               >

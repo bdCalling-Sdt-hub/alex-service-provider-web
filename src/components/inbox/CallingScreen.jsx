@@ -30,17 +30,17 @@ export default function CallingScreen() {
             <p className="text-sm text-[#6A6D76]">09127468125</p>
           </div>
           <div className="mt-auto flex w-full items-center justify-around">
-            <button className="flex flex-col items-center gap-1 p-4 text-gray-400 transition-colors hover:text-white">
+            <button className="flex flex-col items-center gap-1 p-4 text-gray-400">
               <FaMicrophone className="h-6 w-6 text-[#00C0B5]" />
               <span className="text-xs">Mute</span>
             </button>
-            <button className="flex flex-col items-center gap-1 p-4 text-gray-400 transition-colors hover:text-white">
+            <button className="flex flex-col items-center gap-1 p-4 text-gray-400">
               <FaVolumeUp className="h-6 w-6 text-[#00C0B5]" />
               <span className="text-xs">Speaker</span>
             </button>
             <button 
             onClick={() => navigate("/videoCallScreen")}
-            className="flex flex-col items-center gap-1 p-4 text-gray-400 transition-colors hover:text-white">
+            className="flex flex-col items-center gap-1 p-4 text-gray-400">
               <FaVideo className="h-6 w-6  text-[#00C0B5]" />
               <span className="text-xs">Video call</span>
             </button>

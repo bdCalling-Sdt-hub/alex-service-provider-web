@@ -2,8 +2,10 @@
 
 import { FaPhone, FaPhoneSlash } from "react-icons/fa";
 import CustomComponent from "../../../pages/shared/CustomComponent";
+import { useNavigate } from "react-router-dom";
 
 export default function VideoCallScreen() {
+  const navigate = useNavigate();
   return (
     <CustomComponent>
       <div className="flex items-center justify-center py-16">
@@ -15,9 +17,7 @@ export default function VideoCallScreen() {
               backgroundImage: `url('/video.png')`,
               backgroundPosition: "center 20%",
             }}
-          >
-     
-          </div>
+          ></div>
 
           {/* Call Interface */}
           <div className="relative h-full flex flex-col items-center justify-between py-20 px-6">
@@ -31,8 +31,8 @@ export default function VideoCallScreen() {
             <div className="flex items-center justify-center gap-20">
               {/* Decline Call Button */}
               <button
+                onClick={() => navigate("/videoCallingScreen")}
                 className="w-16 h-16 flex items-center justify-center rounded-full bg-red-500 hover:bg-red-600 transition-colors"
-                onClick={() => console.log("Call declined")}
               >
                 <FaPhoneSlash className="w-8 h-8 text-white rotate-135" />
               </button>
@@ -40,7 +40,7 @@ export default function VideoCallScreen() {
               {/* Accept Call Button */}
               <button
                 className="w-16 h-16 flex items-center justify-center rounded-full bg-green-500 hover:bg-green-600 transition-colors"
-                onClick={() => console.log("Call accepted")}
+                onClick={() => navigate("/videoCallingScreen")}
               >
                 <FaPhone className="w-8 h-8 text-white" />
               </button>

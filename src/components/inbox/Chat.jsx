@@ -28,10 +28,10 @@ export default function Chat() {
 
   return (
     <CustomComponent>
-      <div className="flex flex-col h-screen bg-[#E6FAF9]  py-16">
-        <div className="w-[400px] mx-auto">
+      <div className="flex flex-col bg-[#E6FAF9]">
+        <div className="w-full md:w-[400px] lg:w-[400px] px-5 mx-auto my-5 md:my-16">
           {/* Header */}
-          <div className="flex justify-between items-center ">
+          <div className="flex justify-between items-center p-4">
             <ProfileBackButton />
             <IoCall
               onClick={() => navigate("/callScreen")}

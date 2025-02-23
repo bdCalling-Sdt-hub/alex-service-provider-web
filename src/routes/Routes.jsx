@@ -29,6 +29,7 @@ import Chat from "../components/inbox/Chat";
 import CallScreen from "../components/inbox/CallScreen";
 import CallingScreen from "../components/inbox/CallingScreen";
 import VideoCallScreen from "../components/inbox/VideoCallScreen";
+import VideoCallingScreen from "../components/inbox/VideoCallingScreen";
 
 const router = createBrowserRouter([
   {
@@ -152,6 +153,10 @@ const router = createBrowserRouter([
       {
         path: "/videoCallScreen",
         element: <VideoCallScreen />,
+      },
+      {
+        path: "/videoCallingScreen",
+        element: <VideoCallingScreen />,
       },
     ],
   },
