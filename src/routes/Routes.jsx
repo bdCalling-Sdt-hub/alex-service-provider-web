@@ -24,6 +24,8 @@ import ProfessionalProfile from "../components/home/professionalProfile";
 import SearchPage from "../components/home/SearchPage";
 import ServiceSearch from "../components/home/ServiceSearch";
 import MainLayout from "../layouts/MainLayout";
+import Inbox from "../../pages/inbox/Inbox";
+import Chat from "../components/inbox/Chat";
 
 const router = createBrowserRouter([
   {
@@ -126,6 +128,15 @@ const router = createBrowserRouter([
       {
         path: "/professionalProfile",
         element: <ProfessionalProfile />,
+      },
+      // inbox routes here...
+      {
+        path: "/inbox",
+        element: <Inbox />,
+      },
+      {
+        path: "/chat",
+        element: <Chat />,
       },
     ],
   },
