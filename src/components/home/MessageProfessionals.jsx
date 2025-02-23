@@ -1,4 +1,4 @@
-import { FiPaperclip, FiSend } from "react-icons/fi";
+import { FiMinusCircle, FiPaperclip, FiSend } from "react-icons/fi";
 import { useState } from "react";
 import CustomComponent from "../../../pages/shared/CustomComponent";
 import ProfileBackButton from "../profile/ProfileBackButton";
@@ -6,6 +6,7 @@ import { IoCall } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { FaVideo } from "react-icons/fa";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { Modal } from "antd";
 
 const messages = [
   { id: 1, text: "Hello", time: "3:00 pm", sender: "user" },
@@ -26,6 +27,9 @@ const messages = [
 
 export default function MessageProfessionals() {
   const [message, setMessage] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState("");
+  const [isModalOpen2, setIsModalOpen2] = useState("");
+
   const navigate = useNavigate();
   return (
     <div className="flex flex-col bg-[#E6FAF9]">
@@ -43,9 +47,55 @@ export default function MessageProfessionals() {
               className="text-[#00C0B5]"
             />
             <BsThreeDotsVertical
-              onClick={() => navigate("/callScreen")}
+              onClick={() => setIsModalOpen(true)}
               className="text-[#00C0B5]"
             />
+            <Modal
+              open={isModalOpen}
+              onCancel={() => setIsModalOpen(false)}
+              footer={null}
+              centered
+              width={400}
+              className="rounded-xl shadow-lg"
+              title="Settings"
+            >
+              <div className="my-5">
+                <div
+                  onClick={() => setIsModalOpen2(true)}
+                  className="w-full  text-[#00C0B5] py-2 flex items-center justify-start text-xl gap-2"
+                >
+                  <FiMinusCircle className="text-[#00C0B5]" />
+                  <p>Block this user</p>
+                </div>
+              </div>
+            </Modal>
+            <Modal
+              open={isModalOpen2}
+              onCancel={() => setIsModalOpen2(false)}
+              footer={null}
+              centered
+              width={400}
+              className="rounded-xl shadow-lg"
+            >
+              <h2 className="text-xl font-semibold text-center mt-4">
+                Are you sure you want to block?
+              </h2>
+              <div className="mt-6 flex flex-col gap-3">
+                <button
+                  type="primary"
+                  className="w-full bg-[#00C0B5] text-white py-2 rounded-md cursor-pointer"
+                  onClick={() => handleDelete(selectedAddress.id)}
+                >
+                  YES, BLOCK
+                </button>
+                <button
+                  className="w-full border border-[#00C0B5] text-[#00C0B5] py-2 rounded-md cursor-pointer"
+                  onClick={() => setIsDeleteModalOpen(false)}
+                >
+                  NO, DON&apos;T BLOCK
+                </button>
+              </div>
+            </Modal>
           </div>
         </div>
 

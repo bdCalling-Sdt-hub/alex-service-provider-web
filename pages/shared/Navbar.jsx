@@ -168,7 +168,6 @@
 
 // export default Navbar;
 
-
 import { Modal } from "antd";
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
@@ -190,9 +189,12 @@ const Navbar = ({ userType }) => {
   ];
 
   const providerLinks = [
-    { name: "Dashboard", path: "/dashboard" },
-    { name: "My Services", path: "/my-services" },
-    { name: "Requests", path: "/requests" },
+    { name: "Home", path: "/providerHome" },
+    { name: "Calender", path: "/calender" },
+    { name: "Notification", path: "/notification" },
+    { name: "Request", path: "/providerRequest" },
+    { name: "Inbox", path: "/inbox" },
+    { name: "Profile", path: "/providerProfile" },
   ];
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -207,19 +209,21 @@ const Navbar = ({ userType }) => {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center text-lg font-medium gap-8">
-          {(userType === "user" ? navLinks : providerLinks).map(({ name, path }) => (
-            <Link
-              key={name}
-              to={path}
-              className={`${
-                location.pathname === path
-                  ? "text-[#00BFB3] font-bold"
-                  : "hover:text-[#00BFB3]"
-              } transition-all cursor-pointer`}
-            >
-              {name}
-            </Link>
-          ))}
+          {(userType === "user" ? navLinks : providerLinks).map(
+            ({ name, path }) => (
+              <Link
+                key={name}
+                to={path}
+                className={`${
+                  location.pathname === path
+                    ? "text-[#00BFB3] font-bold"
+                    : "hover:text-[#00BFB3]"
+                } transition-all cursor-pointer`}
+              >
+                {name}
+              </Link>
+            )
+          )}
         </nav>
 
         {/* Authentication Buttons (Desktop) */}
@@ -257,16 +261,18 @@ const Navbar = ({ userType }) => {
           menu ? "translate-x-0 top-0 left-0 " : "-translate-x-full"
         }`}
       >
-        {(userType === "user" ? navLinks : providerLinks).map(({ name, path }) => (
-          <Link
-            key={name}
-            to={path}
-            onClick={() => setMenu(false)}
-            className="hover:text-[#98dad9] transition-all cursor-pointer text-2xl"
-          >
-            {name}
-          </Link>
-        ))}
+        {(userType === "user" ? navLinks : providerLinks).map(
+          ({ name, path }) => (
+            <Link
+              key={name}
+              to={path}
+              onClick={() => setMenu(false)}
+              className="hover:text-[#98dad9] transition-all cursor-pointer text-2xl"
+            >
+              {name}
+            </Link>
+          )
+        )}
 
         {/* Authentication Buttons (Mobile) */}
         <Link
