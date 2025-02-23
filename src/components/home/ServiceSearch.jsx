@@ -56,7 +56,7 @@ function ServiceSearch() {
 
   return (
     <CustomComponent>
-      <div className="w-[360px] h-full mx-auto gap-4 py-16 ">
+      <div className="w-full md:w-[400px] lg:w-[400px] px-5 my-5 md:my-16 h-full mx-auto gap-4">
         {/* Search Bar */}
         <div className="flex justify-center items-center gap-5 w-full mt-5">
           <div className="relative w-[80%]">
@@ -127,7 +127,7 @@ function ServiceSearch() {
             onCancel={() => setIsModalOpen(false)}
             title="How does the Elderly care service work?"
           >
-            <div className="w-full max-w-md h-[70vh] mx-auto bg-white  rounded-lg p-6 overflow-y-auto">
+            <div className="w-full max-w-md h-[80vh] mx-auto bg-white  rounded-lg p-5 overflow-y-auto">
               <div className="space-y-1 relative pb-2">
                 {/* Illustration */}
                 <div className="mb-8 flex justify-center">
@@ -144,7 +144,7 @@ function ServiceSearch() {
                     <div key={item.id} className="border-b border-gray-200">
                       <button
                         onClick={() => toggleAccordion(item.id)}
-                        className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50"
+                        className="w-full flex items-center justify-between text-left hover:bg-gray-50"
                       >
                         <span className="text-lg text-gray-900">
                           {item.question}
