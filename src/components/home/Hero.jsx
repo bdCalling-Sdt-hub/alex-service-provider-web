@@ -1,19 +1,21 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Hero() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex items-center justify-center py-10 md:py-16">
+    <div className="flex items-center justify-center py-10">
       <div className="relative w-[300px] md:w-[500px] lg:w-[600px] h-[300px] md:h-[500px] lg:h-[600px]">
         {/* Center Item */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center w-20 h-20 md:w-40 md:h-40 bg-white rounded-full shadow-lg">
-          <img
-            src="/icon/phone.png"
-            alt="Support"
-            className="w-8 md:w-12 h-8 md:h-12"
-          />
-          <p className="text-blue-500 font-semibold">Support</p>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center text-center w-20 h-20 md:w-40 md:h-40 bg-white rounded-full shadow-lg">
+          <Link to="/inbox" className="flex flex-col items-center justify-center">
+            <img
+              src="/icon/phone.png"
+              alt="Support"
+              className="w-5 md:w-12 h-5 md:h-12"
+            />
+            <p className="text-xs md:text-sm font-medium">Support</p>
+          </Link>
         </div>
 
         {/* Circular Items */}
@@ -79,7 +81,7 @@ export default function Hero() {
             <img
               src={item.icon}
               alt={item.name}
-              className="w-8 md:w-10 h-8 md:h-10"
+              className="w-5 md:w-10 h-5 md:h-10"
             />
             <p className="text-xs md:text-sm font-medium">{item.name}</p>
           </div>

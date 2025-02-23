@@ -72,20 +72,22 @@ export default function RatingModal({ isOpen, onClose }) {
       />
 
       {/* Submit Button */}
-      <Button
-        type="primary"
-        className="w-full mt-4 bg-[#00C0B5] hover:bg-teal-600"
-        onClick={() => {
-          console.log("Feedback Submitted:", {
-            rating,
-            selectedTags,
-            feedback,
-          });
-          onClose();
-        }}
-      >
-        Submit
-      </Button>
+      <div className="flex justify-center mt-4">
+        <button
+          type="primary"
+          className="text-white bg-[#00C0B5] hover:bg-teal-600 px-4 py-3 rounded-lg w-1/2"
+          onClick={() => {
+            console.log("Feedback Submitted:", {
+              rating,
+              selectedTags,
+              feedback,
+            });
+            onClose();
+          }}
+        >
+          Submit
+        </button>
+      </div>
     </Modal>
   );
 }
