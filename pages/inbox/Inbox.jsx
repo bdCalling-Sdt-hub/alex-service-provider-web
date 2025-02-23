@@ -6,10 +6,12 @@ import { Modal } from "antd";
 import { SlCallOut } from "react-icons/sl";
 import { RiMessage2Line } from "react-icons/ri";
 import AlertFeed from "../../src/components/inbox/AlertFeed";
+import { useNavigate } from "react-router-dom";
 
 function Inbox() {
   const [selectedTab, setSelectedTab] = useState("chat");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <CustomComponent>
@@ -124,6 +126,7 @@ function Inbox() {
               <button
                 onClick={() => {
                   setIsModalOpen(true);
+                  navigate("/chat");
                 }}
                 className="w-full bg-[#00C0B5] text-white rounded-lg px-4 py-3 flex items-center justify-center gap-2 mt-2"
               >

@@ -26,6 +26,8 @@ import ServiceSearch from "../components/home/ServiceSearch";
 import MainLayout from "../layouts/MainLayout";
 import Inbox from "../../pages/inbox/Inbox";
 import Chat from "../components/inbox/Chat";
+import CallScreen from "../components/inbox/CallScreen";
+import CallingScreen from "../components/inbox/CallingScreen";
 
 const router = createBrowserRouter([
   {
@@ -137,6 +139,14 @@ const router = createBrowserRouter([
       {
         path: "/chat",
         element: <Chat />,
+      },
+      {
+        path: "/callScreen",
+        element: <CallScreen />,
+      },
+      {
+        path: "/callingScreen",
+        element: <CallingScreen />,
       },
     ],
   },
