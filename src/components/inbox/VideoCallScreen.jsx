@@ -8,14 +8,13 @@ export default function VideoCallScreen() {
   const navigate = useNavigate();
   return (
     <CustomComponent>
-      <div className="flex items-center justify-center py-16">
-        <div className="relative h-[650px] w-[400px]  mx-auto bg-black ">
+      <div className="flex items-center justify-center">
+        <div className="relative h-[500px] w-[400px]  mx-auto bg-black ">
           {/* Background Image */}
           <div
-            className="absolute inset-0 w-full h-full bg-cover bg-center"
+            className="absolute inset-0 w-full h-full bg-cover bg-center object-center object-cover"
             style={{
               backgroundImage: `url('/video.png')`,
-              backgroundPosition: "center 20%",
             }}
           ></div>
 

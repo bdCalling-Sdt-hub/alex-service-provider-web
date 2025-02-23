@@ -5,7 +5,7 @@ import { AiFillSound } from "react-icons/ai";
 const VideoCallingScreen = () => {
   return (
     <CustomComponent>
-      <div className="relative w-full md:w-[400px] lg:w-[400px] h-[650px] px-5 mx-auto my-5 md:my-16">
+      <div className="relative w-full md:w-[400px] lg:w-[400px] h-[500px] mx-auto mb-5 md:mb-16">
         {/* Main Video */}
         <img
           src="/video.png"

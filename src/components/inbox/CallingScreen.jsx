@@ -11,7 +11,7 @@ export default function CallingScreen() {
     const navigate = useNavigate();
   return (
     <CustomComponent>
-      <div className="flex w-[400px] h-[500px] mx-auto  items-center justify-center py-16">
+      <div className="flex w-full md:w-[400px] lg:w-[400px] px-5 my-5 md:my-16 h-[500px] mx-auto  items-center justify-center">
         <div className="flex  flex-col items-center gap-5">
           <p>0:54</p>
           <div className="relative text-center">
