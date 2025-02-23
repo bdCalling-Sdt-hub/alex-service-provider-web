@@ -51,6 +51,7 @@ export default function ProfessionalProfile() {
               <div className="flex justify-around items-center p-5 rounded-lg border border-[#6A6D76]">
                 <div>
                   <img
+                    onClick={() => navigate("/messageProfessionals")}
                     src="/ProfessionalProfile/a.png"
                     alt="Professional caregiver"
                     className="w-10 h-10 rounded-full"

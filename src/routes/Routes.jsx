@@ -30,6 +30,7 @@ import CallScreen from "../components/inbox/CallScreen";
 import CallingScreen from "../components/inbox/CallingScreen";
 import VideoCallScreen from "../components/inbox/VideoCallScreen";
 import VideoCallingScreen from "../components/inbox/VideoCallingScreen";
+import MessageProfessionals from "../components/home/MessageProfessionals";
 
 const router = createBrowserRouter([
   {
@@ -132,6 +133,10 @@ const router = createBrowserRouter([
       {
         path: "/professionalProfile",
         element: <ProfessionalProfile />,
+      },
+      {
+        path: "/messageProfessionals",
+        element: <MessageProfessionals />,
       },
       // inbox routes here...
       {
