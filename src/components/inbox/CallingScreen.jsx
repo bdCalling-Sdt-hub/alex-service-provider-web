@@ -5,8 +5,10 @@ import {
   FaPhoneSlash,
 } from "react-icons/fa";
 import CustomComponent from "../../../pages/shared/CustomComponent";
+import { useNavigate } from "react-router-dom";
 
 export default function CallingScreen() {
+    const navigate = useNavigate();
   return (
     <CustomComponent>
       <div className="flex w-[400px] h-[500px] mx-auto  items-center justify-center py-16">
@@ -36,7 +38,9 @@ export default function CallingScreen() {
               <FaVolumeUp className="h-6 w-6 text-[#00C0B5]" />
               <span className="text-xs">Speaker</span>
             </button>
-            <button className="flex flex-col items-center gap-1 p-4 text-gray-400 transition-colors hover:text-white">
+            <button 
+            onClick={() => navigate("/videoCallScreen")}
+            className="flex flex-col items-center gap-1 p-4 text-gray-400 transition-colors hover:text-white">
               <FaVideo className="h-6 w-6  text-[#00C0B5]" />
               <span className="text-xs">Video call</span>
             </button>
