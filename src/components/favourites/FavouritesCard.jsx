@@ -32,7 +32,7 @@ export default function FavouritesCard() {
   };
 
   return (
-    <div className="w-[400px] bg-white rounded-2xl shadow-lg p-4 flex flex-col">
+    <div className="w-full md:w-[400px] lg:w-[400px] p-5  mx-auto my-5 md:my-16 bg-white rounded-2xl shadow-lg flex flex-col">
       {/* Profile Image */}
       <div className="flex">
         <div className="relative">

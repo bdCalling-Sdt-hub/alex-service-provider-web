@@ -36,7 +36,7 @@ function Service() {
 
   return (
     <CustomComponent>
-      <div className="w-[400px] mx-auto my-16">
+      <div className="w-full md:w-[400px] lg:w-[400px] px-5  mx-auto my-5 md:my-16">
         {/* Title */}
         <h1 className="text-2xl font-bold text-black">Service</h1>
 

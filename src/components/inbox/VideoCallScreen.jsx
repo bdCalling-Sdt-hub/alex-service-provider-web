@@ -9,7 +9,7 @@ export default function VideoCallScreen() {
   return (
     <CustomComponent>
       <div className="flex items-center justify-center">
-        <div className="relative h-[500px] w-[400px]  mx-auto bg-black ">
+        <div className="relative h-[500px] w-[400px]  mx-auto bg-black my-5 md:my-16">
           {/* Background Image */}
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-center object-center object-cover"

@@ -36,9 +36,6 @@ export default function RatingModal({ isOpen, onClose }) {
         <h2 className="text-lg font-bold text-gray-800">
           Rate Your Experience
         </h2>
-        {/* <button className="text-gray-500 hover:text-black" onClick={onClose}>
-          <FaTimes className="w-5 h-5" />
-        </button> */}
       </div>
 
       {/* Rating */}
@@ -77,7 +74,7 @@ export default function RatingModal({ isOpen, onClose }) {
       {/* Submit Button */}
       <Button
         type="primary"
-        className="w-full mt-4 bg-teal-500 hover:bg-teal-600"
+        className="w-full mt-4 bg-[#00C0B5] hover:bg-teal-600"
         onClick={() => {
           console.log("Feedback Submitted:", {
             rating,

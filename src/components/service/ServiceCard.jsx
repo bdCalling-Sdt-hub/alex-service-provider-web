@@ -9,7 +9,7 @@ export default function ServiceCard({ title, time, date, image, type }) {
 
   return (
     <>
-      <div className="w-[400px] h-[150px] bg-white rounded-2xl shadow-lg p-4 flex items-center">
+      <div className="w-full md:w-[400px] lg:w-[400px] mx-auto my-5 md:my-16 h-[150px] bg-white rounded-2xl shadow-lg p-4 flex items-center">
         <img
           src={image ? image : cleanerImg}
           alt={title}
