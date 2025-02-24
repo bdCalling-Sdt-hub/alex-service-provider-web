@@ -42,6 +42,8 @@ import Mylisting from "../../pages/Provider/profile/Mylisting";
 import Reviews from "../../pages/Provider/profile/Reviews";
 import BookingFreference from "../../pages/Provider/profile/BookingFreference";
 import WorkArea from "../../pages/Provider/profile/WorkArea";
+import Calender from "../../pages/Provider/calender/Calender";
+import CalenderToBookingDetails from "../../pages/Provider/calender/CalenderToBookingDetails";
 
 const router = createBrowserRouter([
   {
@@ -218,6 +220,14 @@ const router = createBrowserRouter([
       {
         path: "/workArea",
         element: <WorkArea />,
+      },
+      {
+        path: "/calender",
+        element: <Calender />,
+      },
+      {
+        path: "/calenderToBookingDetails",
+        element: <CalenderToBookingDetails />,
       },
     ],
   },
