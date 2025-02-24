@@ -33,6 +33,18 @@ import VideoCallingScreen from "../components/inbox/VideoCallingScreen";
 import MessageProfessionals from "../components/home/MessageProfessionals";
 import ProviderHome from "../../pages/Provider/home/ProviderHome";
 import ProviderRequest from "../../pages/Provider/request/ProviderRequest";
+import Complete from "../../pages/Provider/request/Complete";
+import BookingDetails from "../../pages/Provider/request/BookingDetails";
+import BookingDetailsComplete from "../../pages/Provider/request/BookingDetailsComplete";
+import ProviderProfile from "../../pages/Provider/profile/ProviderProfile";
+import MyBalance from "../../pages/Provider/profile/MyBalance";
+import Mylisting from "../../pages/Provider/profile/Mylisting";
+import Reviews from "../../pages/Provider/profile/Reviews";
+import BookingFreference from "../../pages/Provider/profile/BookingFreference";
+import WorkArea from "../../pages/Provider/profile/WorkArea";
+import Calender from "../../pages/Provider/calender/Calender";
+import CalenderToBookingDetails from "../../pages/Provider/calender/CalenderToBookingDetails";
+import WorkSchedule from "../../pages/Provider/home/WorkSchedule";
 
 const router = createBrowserRouter([
   {
@@ -173,6 +185,54 @@ const router = createBrowserRouter([
       {
         path: "/providerRequest",
         element: <ProviderRequest />,
+      },
+      {
+        path: "/complete",
+        element: <Complete />,
+      },
+      {
+        path: "/bookingDetails",
+        element: <BookingDetails />,
+      },
+      {
+        path: "/bookingDetailsComplete",
+        element: <BookingDetailsComplete />,
+      },
+      {
+        path: "/providerProfile",
+        element: <ProviderProfile />,
+      },
+      {
+        path: "/myBalance",
+        element: <MyBalance />,
+      },
+      {
+        path: "/mylisting",
+        element: <Mylisting />,
+      },
+      {
+        path: "/reviews",
+        element: <Reviews />,
+      },
+      {
+        path: "/bookingFreference",
+        element: <BookingFreference />,
+      },
+      {
+        path: "/workArea",
+        element: <WorkArea />,
+      },
+      {
+        path: "/calender",
+        element: <Calender />,
+      },
+      {
+        path: "/calenderToBookingDetails",
+        element: <CalenderToBookingDetails />,
+      },
+      {
+        path: "/workSchedule",
+        element: <WorkSchedule />,
       },
     ],
   },

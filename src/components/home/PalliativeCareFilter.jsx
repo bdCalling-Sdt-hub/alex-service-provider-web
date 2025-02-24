@@ -107,7 +107,7 @@ function PalliativeCareFilter() {
                     />
                   </div>
                 </div>
-                <div className="mb-5 border-t-2 border-[#6A6D76] py-5">
+                <div className="my-5 border-t-2 border-[#6A6D76] py-5">
                   <h2 className="text-xl font-bold">
                     Professional’s experience
                   </h2>

@@ -1,5 +1,5 @@
-import React from "react";
+import { ProviderSlider } from "./ProviderSlider";
 
 export default function ProviderHome() {
-  return <div>ProviderHome</div>;
+  return <ProviderSlider />;
 }

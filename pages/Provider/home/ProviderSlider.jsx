@@ -4,26 +4,25 @@ import { useNavigate } from "react-router-dom";
 
 const slides = [
   {
-    title: "Find your at-home service",
+    title: "Offer your at-home services",
     description:
-      "We offer almost everything: cleaning, private classes, beauty...",
-    image: "/slide/slide1.png",
+      "Let us know where you can travel to, when you’re available, and what service you want to offer.",
+    image: "/provider/ps3.png",
   },
   {
-    title: "Find your at-home service",
-    description:
-      "We offer almost everything: cleaning, private classes, beauty...",
-    image: "/slide/slide2.png",
+    title: "Perform the services",
+    description: "Complete the service for which you have been booked.",
+    image: "/provider/ps2.png",
   },
   {
-    title: "Find your at-home service",
+    title: "Earn money",
     description:
-      "We offer almost everything: cleaning, private classes, beauty...",
-    image: "/slide/slide3.png",
+      "Receive the payment for the services you’ve provided in your account!",
+    image: "/provider/ps1.png",
   },
 ];
 
-export function HomeSlider() {
+export function ProviderSlider() {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const navigate = useNavigate();
 
@@ -33,13 +32,13 @@ export function HomeSlider() {
 
   return (
     <CustomComponent>
-      <div className="relative w-[360px] h-[680px] mx-auto text-white flex flex-col items-center justify-center px-5 py-10">
+      <div className="relative w-[400px] h-[680px] mx-auto text-white flex flex-col items-center justify-center px-5 py-10">
         {/* Skip button */}
         <button
           onClick={() => {
-            navigate("/homeWithSearch");
+            navigate("/workSchedule");
           }}
-          className="absolute right-4 top-4 text-teal-400"
+          className="absolute right-4 top-4 text-[#0084BF]"
         >
           Skip
         </button>
@@ -55,7 +54,7 @@ export function HomeSlider() {
 
         {/* Text content */}
         <div className="w-full text-center space-y-4">
-          <h1 className="text-2xl font-semibold text-[#1C3E64]">
+          <h1 className="text-2xl font-semibold text-white">
             {slides[currentSlide].title}
           </h1>
           <p className="text-gray-400">{slides[currentSlide].description}</p>
@@ -66,7 +65,9 @@ export function HomeSlider() {
               <div
                 key={index}
                 className={`h-2 w-2 rounded-full transition-all duration-300 ${
-                  currentSlide === index ? "bg-[#1C3E64] w-6" : "bg-gray-600 w-2"
+                  currentSlide === index
+                    ? "bg-[#0084BF] w-6"
+                    : "bg-gray-600 w-2"
                 }`}
               />
             ))}
@@ -75,7 +76,7 @@ export function HomeSlider() {
           {/* Next button */}
           <button
             onClick={nextSlide}
-            className="w-full bg-teal-400 py-4 text-black hover:bg-teal-500"
+            className="w-full bg-[#0084BF] py-4 text-black "
           >
             Next
           </button>
