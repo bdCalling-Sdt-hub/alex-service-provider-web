@@ -6,7 +6,7 @@ export default function CallScreen() {
     const navigate = useNavigate();
   return (
     <CustomComponent>
-      <div className="w-[400px] h-[500px] mx-auto flex flex-col items-center justify-between  py-16">
+      <div className="w-full md:w-[400px] lg:w-[400px] px-5 my-5 md:my-16 h-[500px] mx-auto flex flex-col items-center justify-around md:justify-between">
         {/* Profile Section */}
         <div className="flex flex-col items-center justify-center space-y-4">
           <div className="relative">

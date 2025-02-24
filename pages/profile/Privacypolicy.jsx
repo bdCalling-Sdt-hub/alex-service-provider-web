@@ -4,7 +4,7 @@ import CustomComponent from "../shared/CustomComponent";
 function Privacy() {
   return (
     <CustomComponent>
-      <div className="w-[400px] mx-auto my-16">
+      <div className="w-full md:w-[400px] lg:w-[400px] px-5 mx-auto my-5 md:my-16">
         <ProfileBackButton title="Privacy Policy" />
         gravida elit enim. lobortis, ex orci lobortis, Donec orci elit felis,
         luctus ultrices odio tincidunt cursus elit ex nisi vehicula, Morbi Nunc

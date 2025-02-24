@@ -53,7 +53,7 @@ function PalliativeCareFilter() {
   return (
     <div>
       <CustomComponent>
-        <div className="p-5 text-gray-800 max-w-[738px] mx-auto">
+        <div className="w-full md:w-[800px] lg:w-[800px] px-5 my-5 md:my-16 text-gray-800 mx-auto">
           <div className="flex justify-between items-center">
             <button onClick={() => navigate(-1)} className="flex items-center">
               <FaArrowLeft className="h-5 w-5 text-[#00C0B5]" />
@@ -73,7 +73,7 @@ function PalliativeCareFilter() {
               footer={null}
               closable={false}
             >
-              <div className="w-full max-w-md h-[70vh] mx-auto bg-white  rounded-lg p-6 overflow-y-auto">
+              <div className="w-full max-w-md h-[80vh] mx-auto bg-white  rounded-lg p-5 overflow-y-auto">
                 <div className="flex justify-start">
                   <button
                     onClick={() => navigate(-1)}
@@ -85,7 +85,7 @@ function PalliativeCareFilter() {
                     </span>
                   </button>
                 </div>
-                <div className="p-4">
+                <div className="">
                   <label className="text-gray-800 font-semibold text-sm">
                     Price/hour:{" "}
                     <span className="text-[#00C0B5] font-bold">
@@ -223,10 +223,10 @@ function PalliativeCareFilter() {
             </Modal>
           </div>
 
-          <div className="flex justify-between w-full mt-10">
-            <div className="w-1/2">
+          <div className="flex flex-col md:flex-row justify-between w-full mt-10">
+            <div className="w-full md:w-1/2">
               <div className="mb-5 ">
-                <h2 className="text-xl font-bold">Other required tasks</h2>
+                <h2 className="text-xl font-bold mb-2">Other required tasks</h2>
                 {tasks.map((task) => (
                   <label
                     key={task}
@@ -291,7 +291,7 @@ function PalliativeCareFilter() {
                 ))}
               </div>
               <div className="mb-6 ">
-                <h2 className="text-lg font-bold">Show specialists in:</h2>
+                <h2 className="text-lg font-bold mb-2">Show specialists in:</h2>
                 {tasks.map((task) => (
                   <label
                     key={task}
@@ -356,7 +356,7 @@ function PalliativeCareFilter() {
                 ))}
               </div>
             </div>
-            <div className="w-1/2">
+            <div className="w-full md:w-1/2">
               <div className="mb-6 pt-4">
                 <div className="flex justify-between items-center">
                   <h2 className="text-lg font-bold">Palliative care</h2>

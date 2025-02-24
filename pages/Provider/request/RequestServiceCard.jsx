@@ -1,10 +1,9 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { FaCalendarAlt, FaClock, FaPhoneAlt } from "react-icons/fa";
-import cleanerImg from "../../assets/cleaner.jpg";
-import RatingModal from "./RatingModal";
+import cleanerImg from "/about.png";
 
-export default function ServiceCard({ title, time, date, image, type }) {
+export default function RequestServiceCard({ title, time, date, image, type }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -26,37 +25,15 @@ export default function ServiceCard({ title, time, date, image, type }) {
             {date}
           </div>
           <div className="mt-2">
-            {type === "upcoming" && (
-              <span className="text-xs text-[#00C0B5] bg-[#D9FFFD] py-1 px-3 rounded-md">
-                Pending acceptance
+            {type === "Request" && (
+              <span className="text-xs text-black bg-red-400 py-1 px-3 rounded-md">
+                Cancle
               </span>
             )}
-            {type === "past" && (
-              <div className="flex gap-2">
-                <button
-                  size="small"
-                  className="text-xs text-teal-400 hover:text-teal-500 bg-teal-100 hover:bg-teal-200 py-1 px-3 rounded-md cursor-pointer"
-                  onClick={() => setIsModalOpen(true)}
-                >
-                  Rating
-                </button>
-                <button className="flex items-center text-xs text-blue-600 bg-blue-100 py-1 px-3 rounded-md">
-                  <FaPhoneAlt className="w-4 h-4 mr-1" /> Need Support
-                  Immediately
-                </button>
-              </div>
-            )}
-            {type === "cancelled" && (
-              <span className="text-xs text-red-600 bg-red-100 py-1 px-3 rounded-md">
-                Cancel
-              </span>
-            )}
+          
           </div>
         </div>
       </div>
-
-      {/* Rating Modal - Opens when "Rating" is clicked */}
-      <RatingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 }

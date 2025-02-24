@@ -39,7 +39,7 @@ const getNotificationStyles = (type) => {
 
 export default function AlertFeed() {
   return (
-    <div className="w-[400px] mx-auto p-4 space-y-4">
+    <div className="mx-auto w-full md:w-[400px] lg:w-[400px] space-y-4">
       {notifications.map((notification) => {
         const { icon: Icon, bgColor, iconColor } = getNotificationStyles(notification.type);
 

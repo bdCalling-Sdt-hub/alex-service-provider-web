@@ -58,7 +58,7 @@ export default function Frequency() {
   return (
     <CustomComponent>
       <div className=" bg-[#F2F2F2]">
-        <div className="bg-[#00C0B5] h-[200px] flex justify-center items-center gap-5 font-bold">
+        <div className="bg-[#00C0B5] h-[100px] md:h-[200px] flex px-5 justify-center items-center gap-2 md:gap-5 font-bold">
           <div className="">
             <button
               onClick={() => navigate(-1)}
@@ -71,11 +71,11 @@ export default function Frequency() {
               />
             </button>
           </div>
-          <h1 className="text-3xl text-white font-bold">
+          <h1 className="text-xl md:text-3xl text-white font-bold">
             When do you need it?
           </h1>
         </div>
-        <div className="text-white p-6 space-y-8 w-[460px] mx-auto">
+        <div className="text-white space-y-8 w-full md:w-[400px] lg:w-[400px] px-5 my-5 md:my-16 mx-auto">
           {/* Frequency Selection */}
           <section>
             <div className="flex justify-center items-center text-[#0D0D0D] font-bold">

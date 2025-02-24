@@ -38,7 +38,7 @@ export default function MyAddresses() {
 
   return (
     <CustomComponent>
-      <div className="w-[400px] mx-auto my-16">
+      <div className="w-full md:w-[400px] lg:w-[400px] px-5 mx-auto my-5 md:my-16">
         <ProfileBackButton title="My Addresses" />
         <h2 className="font-medium text-[#0D0D0D] mb-4">Your Addresses</h2>
 

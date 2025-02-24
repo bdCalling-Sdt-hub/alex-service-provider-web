@@ -1,10 +1,11 @@
 import { useState } from "react";
-import ServiceCard from "../../src/components/service/ServiceCard";
-import CustomComponent from "../shared/CustomComponent";
+import CustomComponent from "../../shared/CustomComponent";
+import { FaRegCheckSquare } from "react-icons/fa";
+import RequestServiceCard from "./RequestServiceCard";
 
-const tabs = ["Upcoming", "Past", "Cancelled"];
+const tabs = ["Request", "Ongoing", "Cancelled"];
 
-function Service() {
+export default function ProviderRequest() {
   const [activeTab, setActiveTab] = useState("Upcoming");
 
   const services = [
@@ -12,17 +13,17 @@ function Service() {
       title: "Elderly Care",
       time: "From 16:30 to 18:30",
       date: "Monday, 1 Feb. 2025",
-      status: "Pending acceptance",
+      status: "Accept",
       image: "",
-      type: "upcoming",
+      type: "Request",
     },
     {
       title: "Elderly Care",
       time: "From 16:30 to 18:30",
       date: "Monday, 1 Feb. 2025",
-      status: "Rating",
+      status: "Ongoing",
       image: "",
-      type: "past",
+      type: "Ongoing",
     },
     {
       title: "Elderly Care",
@@ -30,18 +31,19 @@ function Service() {
       date: "Monday, 1 Feb. 2025",
       status: "Cancel",
       image: "",
-      type: "cancelled",
+      type: "Canceled",
     },
   ];
-
   return (
     <CustomComponent>
       <div className="w-full md:w-[400px] lg:w-[400px] px-5  mx-auto my-5 md:my-16">
         {/* Title */}
-        <h1 className="text-2xl font-bold text-black">Service</h1>
-
+        <div className="flex items-center justify-between mt-2">
+          <h1 className="text-xl md:text-3xl font-bold text-black">Service</h1>
+          <FaRegCheckSquare className="w-10 h-10 text-[#0084BF]" />
+        </div>
         {/* Tab Navigation */}
-        <div className="flex mt-6">
+        <div className="flex mt-5">
           {tabs.map((tab) => (
             <button
               key={tab}
@@ -62,12 +64,10 @@ function Service() {
           {services
             .filter((service) => service.type === activeTab.toLowerCase())
             .map((service, index) => (
-              <ServiceCard key={index} {...service} />
+              <RequestServiceCard key={index} {...service} />
             ))}
         </div>
       </div>
     </CustomComponent>
   );
 }
-
-export default Service;

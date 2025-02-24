@@ -8,7 +8,7 @@ function Care() {
 
   return (
     <CustomComponent>
-      <div className="my-5 flex justify-end items-center gap-5 px-5 md:px-20 lg:px-24 h-[100vh-20%]">
+      <div className="my-5 flex justify-end items-center gap-5 px-5 md:px-20 lg:px-24 h-[100vh-50%] md:h-[100vh-20%]">
         <div className="bg-gray-100 p-2 rounded-full">
           <IoSearchSharp className="w-8 h-8 text-[#0D0D0D]" />
         </div>

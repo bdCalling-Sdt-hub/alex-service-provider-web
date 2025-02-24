@@ -29,6 +29,10 @@ import Chat from "../components/inbox/Chat";
 import CallScreen from "../components/inbox/CallScreen";
 import CallingScreen from "../components/inbox/CallingScreen";
 import VideoCallScreen from "../components/inbox/VideoCallScreen";
+import VideoCallingScreen from "../components/inbox/VideoCallingScreen";
+import MessageProfessionals from "../components/home/MessageProfessionals";
+import ProviderHome from "../../pages/Provider/home/ProviderHome";
+import ProviderRequest from "../../pages/Provider/request/ProviderRequest";
 
 const router = createBrowserRouter([
   {
@@ -132,6 +136,10 @@ const router = createBrowserRouter([
         path: "/professionalProfile",
         element: <ProfessionalProfile />,
       },
+      {
+        path: "/messageProfessionals",
+        element: <MessageProfessionals />,
+      },
       // inbox routes here...
       {
         path: "/inbox",
@@ -152,6 +160,19 @@ const router = createBrowserRouter([
       {
         path: "/videoCallScreen",
         element: <VideoCallScreen />,
+      },
+      {
+        path: "/videoCallingScreen",
+        element: <VideoCallingScreen />,
+      },
+      //...add provider routes here...
+      {
+        path: "/providerHome",
+        element: <ProviderHome />,
+      },
+      {
+        path: "/providerRequest",
+        element: <ProviderRequest />,
       },
     ],
   },

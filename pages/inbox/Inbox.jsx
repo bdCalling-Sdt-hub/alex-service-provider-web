@@ -15,7 +15,7 @@ function Inbox() {
 
   return (
     <CustomComponent>
-      <div className="w-[400px] mx-auto text-[#0d0d0d] min-h-[500px]  py-16">
+      <div className="w-full md:w-[400px] lg:w-[400px] px-5  mx-auto my-5 md:my-16 text-[#0d0d0d]">
         <div className="p-4">
           <h1 className="text-2xl font-bold mb-4">Inbox</h1>
           <div className="flex p-1 rounded-lg">
@@ -94,9 +94,9 @@ function Inbox() {
               onClick={() => {
                 setIsModalOpen(true);
               }}
-              className="w-1/3 bg-[#00C0B5] text-white rounded-lg px-4 py-3 flex items-center justify-center gap-2"
+              className="w-1/2 md:w-1/3 bg-[#00C0B5] text-white rounded-lg px-4 py-3 flex items-center justify-center gap-2"
             >
-              <FaHeadset />
+              <FaHeadset className="w-5 h-5" />
               <p> Support</p>
             </button>
           </div>
@@ -117,6 +117,7 @@ function Inbox() {
               <button
                 onClick={() => {
                   setIsModalOpen(true);
+                  navigate("/callScreen");
                 }}
                 className="w-full bg-[#00C0B5] text-white rounded-lg px-4 py-3 flex items-center justify-center gap-2 mt-5"
               >

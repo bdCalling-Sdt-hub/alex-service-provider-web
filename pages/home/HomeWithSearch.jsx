@@ -54,8 +54,8 @@ function HomeWithSearch() {
       </div>
 
       <Modal open={isModalOpen} centered footer={null} closable={false}>
-        <div className="w-full max-w-md mx-auto bg-white rounded-lg p-6">
-          <div className="bg-white rounded-lg p-6 sm:max-w-md w-full">
+        <div className="w-full mx-auto bg-white rounded-lg p-5">
+          <div className="bg-white rounded-lg sm:max-w-md w-full">
             <div className="space-y-1 relative pb-2">
               <div className="flex items-center justify-between mb-5">
                 <h1 className="text-2xl font-bold text-[#1C3E64]">
@@ -75,7 +75,7 @@ function HomeWithSearch() {
             <div className="flex flex-col gap-4 py-4">
               <Divider className="border-2 border-gray-400" />
               <div className="flex items-center justify-between rounded-lg p-2 gap-2">
-                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-teal-500">
+                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-teal-500 p-1">
                   <FaCheck className="h-3 w-3 text-white" />
                 </div>
                 <input
@@ -83,10 +83,10 @@ function HomeWithSearch() {
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
                   placeholder="Enter address"
-                  className="shadow-lg bg-white py-2 px-5 text-base text-slate-900 w-[260px] h-[40px] outline-0"
+                  className="shadow-lg bg-white py-2 px-5 text-base text-slate-900 w-full md:w-[260px] h-[40px] outline-0"
                 />
-                <button className="h-8 w-8 flex items-center justify-center">
-                  <FaPencil className="h-4 w-4 text-teal-500" />
+                <button className="h-5 w-5 flex items-center justify-center bg-[#E4FAF7] rounded-full p-1">
+                  <FaPencil className="h-5 w-5 text-teal-500" />
                 </button>
               </div>
               <Divider className="border-2 border-gray-400" />

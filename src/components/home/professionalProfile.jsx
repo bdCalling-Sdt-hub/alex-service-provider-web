@@ -22,8 +22,8 @@ export default function ProfessionalProfile() {
 
   return (
     <CustomComponent>
-      <div className="max-w-[738px] mx-auto">
-        <div className="my-10 flex justify-around">
+      <div className="w-full md:w-[800px] lg:w-[800px] px-5 my-5 md:my-16 mx-auto">
+        <div className="flex justify-around">
           <button onClick={() => navigate(-1)} className="flex items-center">
             <FaArrowLeft className="h-5 w-5" />
           </button>
@@ -33,8 +33,8 @@ export default function ProfessionalProfile() {
             <FaRegHeart className="h-5 w-5" />
           </div>
         </div>
-        <div className="flex flex-row justify-center items-center">
-          <div className="max-w-md mx-auto p-4 space-y-6">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-5">
+          <div className="w-full md:max-w-[350px] lg:max-w-[350px]  mx-auto py-5 space-y-5">
             {/* Profile Header */}
             <div className="flex flex-col items-center space-y-3">
               <img
@@ -47,10 +47,11 @@ export default function ProfessionalProfile() {
             </div>
 
             {/* Stats Bar */}
-            <div className="rounded-full p-5">
+            <div className="rounded-full">
               <div className="flex justify-around items-center p-5 rounded-lg border border-[#6A6D76]">
                 <div>
                   <img
+                    onClick={() => navigate("/messageProfessionals")}
                     src="/ProfessionalProfile/a.png"
                     alt="Professional caregiver"
                     className="w-10 h-10 rounded-full"
@@ -210,7 +211,7 @@ export default function ProfessionalProfile() {
               </Modal>
             </div>
           </div>
-          <div className="max-w-md mx-auto p-4 space-y-6">
+          <div className="max-w-md w-full md:max-w-[350px] lg:max-w-[350px]  mx-auto py-5 space-y-5">
             {/* Questions Section */}
             <div className="space-y-6">
               <h3 className="text-lg font-semibold text-[#1C3E64]">
@@ -283,8 +284,10 @@ export default function ProfessionalProfile() {
                 />
                 <div>
                   <div className="flex items-center space-x-2">
-                    Ana.
-                    <span className="text-gray-500">6 Hours Ago</span>
+                    Ana Smith
+                    <span className="text-gray-500 text-xs ml-2">
+                      6 Hours Ago
+                    </span>
                   </div>
                   <div className="flex items-center space-x-2 text-gray-500">
                     <AiOutlineCheckCircle className="" />
@@ -293,7 +296,7 @@ export default function ProfessionalProfile() {
                 </div>
               </div>
               <div>
-                <p className="text-[#0D0D0D] text-xs">
+                <p className="text-[#0D0D0D] text-xs pt-2">
                   The service was outstanding! The provider was professional,
                   arrived on time, and completed the job perfectly.
                 </p>
