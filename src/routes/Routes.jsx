@@ -36,6 +36,10 @@ import ProviderRequest from "../../pages/Provider/request/ProviderRequest";
 import Complete from "../../pages/Provider/request/Complete";
 import BookingDetails from "../../pages/Provider/request/BookingDetails";
 import BookingDetailsComplete from "../../pages/Provider/request/BookingDetailsComplete";
+import ProviderProfile from "../../pages/Provider/profile/ProviderProfile";
+import MyBalance from "../../pages/Provider/profile/MyBalance";
+import Mylisting from "../../pages/Provider/profile/Mylisting";
+import Reviews from "../../pages/Provider/profile/Reviews";
 
 const router = createBrowserRouter([
   {
@@ -188,6 +192,22 @@ const router = createBrowserRouter([
       {
         path: "/bookingDetailsComplete",
         element: <BookingDetailsComplete />,
+      },
+      {
+        path: "/providerProfile",
+        element: <ProviderProfile />,
+      },
+      {
+        path: "/myBalance",
+        element: <MyBalance />,
+      },
+      {
+        path: "/mylisting",
+        element: <Mylisting />,
+      },
+      {
+        path: "/reviews",
+        element: <Reviews />,
       },
     ],
   },
