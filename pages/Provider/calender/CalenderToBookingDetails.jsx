@@ -8,8 +8,6 @@ import CustomComponent from "../../shared/CustomComponent";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "antd";
 import { useState } from "react";
-import { SlCallOut } from "react-icons/sl";
-import { RiMessage2Line } from "react-icons/ri";
 
 function CalenderToBookingDetails() {
   const navigate = useNavigate();
@@ -124,7 +122,7 @@ function CalenderToBookingDetails() {
         {/* Buttons */}
         <div className="flex w-full max-w-md mt-5">
           <button
-            onClick={() =>  setIsModalOpen(true)}
+            onClick={() => setIsModalOpen(true)}
             className="bg-[#0084BF] text-white w-full py-3 rounded-lg font-semibold"
           >
             Complete
@@ -141,27 +139,26 @@ function CalenderToBookingDetails() {
           >
             <div className="mt-6 space-y-4">
               <div className="flex justify-center items-center">
-                <img src="/chat.png" alt="" className="w-20 h-20" />
+                <img src="/base.png" alt="" className="w-full h-full" />
+              </div>
+              <div>
+                <h1 className="text-2xl text-center text-[#0084BF] font-bold">
+                  Congratulations
+                </h1>
+                <p className="text-xs text-center text-[#0D0D0D] mt-2">
+                  Congratulations on achieving this milestone in your
+                  professional journey! Your dedication, expertise, and hard
+                  work are truly commendable. This new step is a testament to
+                  your skill and determination to grow and succeed.
+                </p>
               </div>
               <button
                 onClick={() => {
-                  setIsModalOpen(true);
-                  navigate("/callScreen");
+                  setIsModalOpen(false);
                 }}
-                className="w-full bg-[#00C0B5] text-white rounded-lg px-4 py-3 flex items-center justify-center gap-2 mt-5"
+                className="w-full bg-[#0084BF] text-white rounded-lg px-4 py-3 flex items-center justify-center gap-2 mt-5"
               >
-                <SlCallOut />
-                <p> Call</p>
-              </button>
-              <button
-                onClick={() => {
-                  setIsModalOpen(true);
-                  navigate("/chat");
-                }}
-                className="w-full bg-[#00C0B5] text-white rounded-lg px-4 py-3 flex items-center justify-center gap-2 mt-2"
-              >
-                <RiMessage2Line />
-                <p> Message</p>
+                Done
               </button>
             </div>
           </Modal>

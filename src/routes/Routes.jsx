@@ -44,6 +44,7 @@ import BookingFreference from "../../pages/Provider/profile/BookingFreference";
 import WorkArea from "../../pages/Provider/profile/WorkArea";
 import Calender from "../../pages/Provider/calender/Calender";
 import CalenderToBookingDetails from "../../pages/Provider/calender/CalenderToBookingDetails";
+import WorkSchedule from "../../pages/Provider/home/WorkSchedule";
 
 const router = createBrowserRouter([
   {
@@ -228,6 +229,10 @@ const router = createBrowserRouter([
       {
         path: "/calenderToBookingDetails",
         element: <CalenderToBookingDetails />,
+      },
+      {
+        path: "/workSchedule",
+        element: <WorkSchedule />,
       },
     ],
   },
