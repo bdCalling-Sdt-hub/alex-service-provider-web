@@ -28,7 +28,7 @@ export default function ProviderProfile() {
     {
       icon: <FaMapMarkerAlt />,
       label: "Booking Preference",
-      path: "/profile/addresses",
+      path: "/bookingFreference",
     },
     {
       icon: <FaCreditCard />,

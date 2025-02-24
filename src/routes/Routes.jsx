@@ -40,6 +40,8 @@ import ProviderProfile from "../../pages/Provider/profile/ProviderProfile";
 import MyBalance from "../../pages/Provider/profile/MyBalance";
 import Mylisting from "../../pages/Provider/profile/Mylisting";
 import Reviews from "../../pages/Provider/profile/Reviews";
+import BookingFreference from "../../pages/Provider/profile/BookingFreference";
+import WorkArea from "../../pages/Provider/profile/WorkArea";
 
 const router = createBrowserRouter([
   {
@@ -208,6 +210,14 @@ const router = createBrowserRouter([
       {
         path: "/reviews",
         element: <Reviews />,
+      },
+      {
+        path: "/bookingFreference",
+        element: <BookingFreference />,
+      },
+      {
+        path: "/workArea",
+        element: <WorkArea />,
       },
     ],
   },
