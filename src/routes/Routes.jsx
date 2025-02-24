@@ -33,6 +33,9 @@ import VideoCallingScreen from "../components/inbox/VideoCallingScreen";
 import MessageProfessionals from "../components/home/MessageProfessionals";
 import ProviderHome from "../../pages/Provider/home/ProviderHome";
 import ProviderRequest from "../../pages/Provider/request/ProviderRequest";
+import Complete from "../../pages/Provider/request/Complete";
+import BookingDetails from "../../pages/Provider/request/BookingDetails";
+import BookingDetailsComplete from "../../pages/Provider/request/BookingDetailsComplete";
 
 const router = createBrowserRouter([
   {
@@ -173,6 +176,18 @@ const router = createBrowserRouter([
       {
         path: "/providerRequest",
         element: <ProviderRequest />,
+      },
+      {
+        path: "/complete",
+        element: <Complete />,
+      },
+      {
+        path: "/bookingDetails",
+        element: <BookingDetails />,
+      },
+      {
+        path: "/bookingDetailsComplete",
+        element: <BookingDetailsComplete />,
       },
     ],
   },
