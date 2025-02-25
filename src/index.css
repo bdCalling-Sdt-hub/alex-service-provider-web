@@ -8,3 +8,17 @@
   background-color: #00c0b5 !important;
   opacity: 1;
 }
+
+:root {
+  --primary-color: #00c0b5;
+  --background-color: #f8f9fa;
+}
+
+.provider-theme {
+  --primary-color: #0084bf;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}

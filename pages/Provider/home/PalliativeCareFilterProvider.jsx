@@ -1,10 +1,10 @@
 import { useState } from "react";
 import CustomComponent from "../../../pages/shared/CustomComponent";
-import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "antd";
+import ProfileBackButton from "../../../src/components/profile/ProfileBackButton";
 
-function PalliativeCareFilter() {
+function PalliativeCareFilterProvider() {
   const navigate = useNavigate();
 
   const tasks = [
@@ -55,36 +55,19 @@ function PalliativeCareFilter() {
       <CustomComponent>
         <div className="w-full md:w-[800px] lg:w-[800px] px-5 my-5 md:my-16 text-gray-800 mx-auto">
           <div className="flex justify-between items-center">
-            <button onClick={() => navigate(-1)} className="flex items-center">
-              <FaArrowLeft className="h-5 w-5 text-[#00C0B5]" />
-              <span className="text-2xl text-[#00C0B5] ml-2 font-bold">
-                Back
-              </span>
-            </button>
+            <ProfileBackButton title="Back" />
             <button
               onClick={() => setIsModalOpen(true)}
               className="text-2xl text-black font-bold underline"
             >
               <span className="">Clear filters</span>
             </button>
-            <Modal
-              open={isModalOpen}
-              centered
-              footer={null}
-              closable={false}
-            >
+            <Modal open={isModalOpen} centered footer={null} closable={false}>
               <div className="w-full max-w-md mx-auto bg-white  rounded-lg p-5 overflow-y-auto">
-                <div className="flex justify-start">
-                  <button
-                    onClick={() => navigate(-1)}
-                    className="flex items-center"
-                  >
-                    <FaArrowLeft className="h-5 w-5 text-[#00C0B5]" />
-                    <span className="text-2xl text-[#00C0B5] ml-2 font-bold">
-                      Back
-                    </span>
-                  </button>
+                <div className="my-5">
+                  <ProfileBackButton title="Back" />
                 </div>
+
                 <div className="">
                   <label className="text-gray-800 font-semibold text-sm">
                     Price/hour:{" "}
@@ -197,7 +180,6 @@ function PalliativeCareFilter() {
                     Only show professionals specialising in palliative care
                   </p>
                 </div>
-
                 <div className="pt-4 border-t-2 border-[#6A6D76]">
                   <div className="flex justify-between items-center">
                     <h2 className="text-lg font-bold">Palliative care</h2>
@@ -219,6 +201,12 @@ function PalliativeCareFilter() {
                     Only show professionals specialising in palliative care
                   </p>
                 </div>
+                <button
+                  className="w-full h-12 text-lg bg-[#0088cc]  text-white rounded-xl mt-5"
+                  onClick={() => navigate("/pofilePictureChange")}
+                >
+                  Confirm
+                </button>
               </div>
             </Modal>
           </div>
@@ -430,4 +418,4 @@ function PalliativeCareFilter() {
   );
 }
 
-export default PalliativeCareFilter;
+export default PalliativeCareFilterProvider;
