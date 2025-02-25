@@ -158,7 +158,10 @@ export default function ProfessionalProfile() {
                         ? "border-[#00C0B5] bg-[#F0FCFB]"
                         : "border-gray-300"
                     }`}
-                    onClick={() => setSelected("weekly")}
+                    onClick={() => {
+                      setSelected("weekly");
+                      navigate("/weeklyBookingTime");
+                    }}
                   >
                     <div className="flex items-center space-x-3">
                       <FaSyncAlt className="text-[#00C0B5] text-2xl" />
@@ -195,7 +198,10 @@ export default function ProfessionalProfile() {
                         ? "border-[#00C0B5] bg-[#F0FCFB]"
                         : "border-gray-300"
                     }`}
-                    onClick={() => setSelected("once")}
+                    onClick={() => {
+                      setSelected("once");
+                      navigate("/singleDayBooking");
+                    }}
                   >
                     <div className="flex items-center space-x-3">
                       <GiArcheryTarget className="text-orange-500 text-2xl" />

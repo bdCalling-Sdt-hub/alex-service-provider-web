@@ -48,8 +48,10 @@ import WorkSchedule from "../../pages/Provider/home/WorkSchedule";
 import PalliativeCareFilterProvider from "../../pages/Provider/home/PalliativeCareFilterProvider";
 import ProfilePictureChange from "../../pages/Provider/home/ProfilePictureChange";
 import ProfileWorkSchedule from "../../pages/Provider/profile/ProfileWorkSchedule";
-import MinimumBookingAmoint from "../../pages/Provider/profile/MinimumBookingAmoint";
 import MinimumBookingAmount from "../../pages/Provider/profile/MinimumBookingAmoint";
+import WeeklyBookingTime from "../components/home/WeeklyBookingTime";
+import DaywiseTimeSet from "../components/home/DaywiseTimeSet";
+import SingleDayBooking from "../components/home/SingleDayBooking";
 
 const router = createBrowserRouter([
   {
@@ -157,6 +159,14 @@ const router = createBrowserRouter([
         path: "/messageProfessionals",
         element: <MessageProfessionals />,
       },
+      {
+        path: "/daywiseTimeSet",
+        element: <DaywiseTimeSet />,
+      },
+      {
+        path: "/singleDayBooking",
+        element: <SingleDayBooking />,
+      },
       // inbox routes here...
       {
         path: "/inbox",
@@ -254,6 +264,10 @@ const router = createBrowserRouter([
       {
         path: "/minimumBookingAmount",
         element: <MinimumBookingAmount />,
+      },
+      {
+        path: "/weeklyBookingTime",
+        element: <WeeklyBookingTime />,
       },
     ],
   },

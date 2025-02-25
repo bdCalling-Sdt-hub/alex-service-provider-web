@@ -192,7 +192,7 @@ const Navbar = ({ userType }) => {
   const providerLinks = [
     { name: "Home", path: "/providerHome" },
     { name: "Calender", path: "/calender" },
-    { name: "Notification", path: "/notification" },
+    { name: "Notification", path: "/inbox" },
     { name: "Request", path: "/providerRequest" },
     { name: "Inbox", path: "/inbox" },
     { name: "Profile", path: "/providerProfile" },
