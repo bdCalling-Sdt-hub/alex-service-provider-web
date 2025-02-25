@@ -45,6 +45,11 @@ import WorkArea from "../../pages/Provider/profile/WorkArea";
 import Calender from "../../pages/Provider/calender/Calender";
 import CalenderToBookingDetails from "../../pages/Provider/calender/CalenderToBookingDetails";
 import WorkSchedule from "../../pages/Provider/home/WorkSchedule";
+import PalliativeCareFilterProvider from "../../pages/Provider/home/PalliativeCareFilterProvider";
+import ProfilePictureChange from "../../pages/Provider/home/ProfilePictureChange";
+import ProfileWorkSchedule from "../../pages/Provider/profile/ProfileWorkSchedule";
+import MinimumBookingAmoint from "../../pages/Provider/profile/MinimumBookingAmoint";
+import MinimumBookingAmount from "../../pages/Provider/profile/MinimumBookingAmoint";
 
 const router = createBrowserRouter([
   {
@@ -233,6 +238,22 @@ const router = createBrowserRouter([
       {
         path: "/workSchedule",
         element: <WorkSchedule />,
+      },
+      {
+        path: "/palliativeCareFilterProvider",
+        element: <PalliativeCareFilterProvider />,
+      },
+      {
+        path: "/pofilePictureChange",
+        element: <ProfilePictureChange />,
+      },
+      {
+        path: "/profileWorkSchedule",
+        element: <ProfileWorkSchedule />,
+      },
+      {
+        path: "/minimumBookingAmount",
+        element: <MinimumBookingAmount />,
       },
     ],
   },

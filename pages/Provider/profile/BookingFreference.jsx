@@ -17,13 +17,13 @@ export default function BookingFreference() {
       id: 2,
       name: "My schedule",
       icon: <MdAccessTimeFilled className="text-[#00C0B5] w-6 h-6" />,
-      path: "/profile/payments/payment-methods",
+      path: "/profileWorkSchedule",
     },
     {
       id: 2,
       name: "Minimum booking amount",
       icon: <RiMoneyDollarCircleFill className="text-[#00C0B5] w-6 h-6" />,
-      path: "/profile/payments/payment-methods",
+      path: "/minimumBookingAmount",
     },
   ];
 

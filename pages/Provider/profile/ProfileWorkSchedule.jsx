@@ -1,12 +1,11 @@
-/* eslint-disable react/prop-types */
 import { useState } from "react";
 import CustomComponent from "../../shared/CustomComponent";
 import ProfileBackButton from "../../../src/components/profile/ProfileBackButton";
 import { Modal } from "antd";
 import { TimeSelector } from "../../shared/TimeSelector";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
-export default function WorkSchedule() {
+export default function ProfileWorkSchedule() {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [fromHours, setFromHours] = useState("09");
   const [fromMinutes, setFromMinutes] = useState("00");
@@ -48,7 +47,7 @@ export default function WorkSchedule() {
       [day]: !prev[day],
     }));
   };
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <CustomComponent>
       <div className="w-full md:w-[400px] lg:w-[400px] mx-auto my-5 md:my-16 text-[#0d0d0d] px-5">
@@ -159,7 +158,9 @@ export default function WorkSchedule() {
               {/* Confirm Button */}
               <button
                 className="w-full h-12 text-lg bg-[#0088cc]  text-white rounded-xl"
-                onClick={() => navigate("/palliativeCareFilterProvider")}
+                onClick={() => {
+                  setIsAddModalOpen(false);
+                }}
               >
                 Confirm
               </button>
