@@ -73,7 +73,7 @@ function PalliativeCareFilter() {
               footer={null}
               closable={false}
             >
-              <div className="w-full max-w-md h-[80vh] mx-auto bg-white  rounded-lg p-5 overflow-y-auto">
+              <div className="w-full max-w-md mx-auto bg-white  rounded-lg p-5 overflow-y-auto">
                 <div className="flex justify-start">
                   <button
                     onClick={() => navigate(-1)}
