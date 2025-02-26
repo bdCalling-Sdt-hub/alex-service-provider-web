@@ -1,7 +1,6 @@
-import React from "react";
 import CustomComponent from "../../../pages/shared/CustomComponent";
 import { useState } from "react";
-import { FaClock, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 import { RxCross1 } from "react-icons/rx";
 import { GiArcheryTarget } from "react-icons/gi";
@@ -9,7 +8,7 @@ import { GiArcheryTarget } from "react-icons/gi";
 function SingleDayBooking() {
   const [selectedDate, setSelectedDate] = useState("15");
   const [selectedTime, setSelectedTime] = useState("16:30");
-  const [duration, setDuration] = useState(2);
+  const [duration, ] = useState(2);
   const [price, setPrice] = useState(50);
 
   const dates = [

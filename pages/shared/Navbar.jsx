@@ -175,6 +175,7 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { FaApple, FaFacebook, FaGoogle } from "react-icons/fa";
+import ProfileBackButton from "../../src/components/profile/ProfileBackButton";
 
 const Navbar = ({ userType }) => {
   const [menu, setMenu] = useState(false);
@@ -199,6 +200,7 @@ const Navbar = ({ userType }) => {
   ];
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-20 w-full bg-white text-[#0D0D0D] px-5 md:px-20 lg:px-24 py-5 shadow-md">
@@ -239,7 +241,7 @@ const Navbar = ({ userType }) => {
             Log In
           </Link>
           <Link
-            to="/signup"
+            onClick={() => setIsProfileModalOpen(true)}
             className="bg-[#00BFB3] text-white py-2 px-4 rounded-lg hover:opacity-80 transition"
           >
             Create Account
@@ -343,6 +345,75 @@ const Navbar = ({ userType }) => {
                 Privacy Policy
               </Link>
             </p>
+          </div>
+        </div>
+      </Modal>
+      <Modal open={isProfileModalOpen} centered footer={null} closable={false}>
+        <div className="w-full max-w-md mx-auto  rounded-lg">
+          <div className="flex flex-col items-center">
+            {/* Header */}
+            <div className="w-full max-w-md mb-6">
+              <ProfileBackButton />
+            </div>
+
+            {/* Main Content */}
+            <div className="w-full max-w-md text-center">
+              <h1 className="text-3xl font-bold text-[#1C3E64] mb-2">
+                What will you do on iBadi?
+              </h1>
+              <p className="text-sm text-gray-600 mb-6">
+                This decision is not final. You can later be both a client and a
+                professional from the account if you wish.
+              </p>
+
+              {/* Cards */}
+              <div className="space-y-6">
+                {/* Book Service Card */}
+                <div
+                  onClick={() => {
+                    setIsModalOpen(true);
+                    setIsProfileModalOpen(false);
+                  }}
+                  className="bg-[#f2f2f2] rounded-xl flex justify-between items-center p-3"
+                >
+                  <img
+                    src="/create/create1.png"
+                    alt="Client booking a service"
+                    className="object-cover"
+                  />
+
+                  <div className="p-4 text-center">
+                    <h2 className="text-lg font-semibold text-[#1C3E64]">
+                      Book a service
+                    </h2>
+                    <p className="text-sm text-gray-600">(I am a Client)</p>
+                  </div>
+                </div>
+
+                {/* Offer Services Card */}
+                <div
+                  onClick={() => {
+                    setIsModalOpen(true);
+                    setIsProfileModalOpen(false);
+                  }}
+                  className="bg-[#f2f2f2] rounded-xl flex justify-between items-center p-3"
+                >
+                  <img
+                    src="/create/create2.png"
+                    alt="Professional offering services"
+                    className="object-cover"
+                  />
+                  <div className="p-4 text-center">
+                    <h2 className="text-lg font-semibold text-[#1C3E64]">
+                      Offer Services
+                    </h2>
+                    <p className="text-sm text-gray-600">
+                      (I am a Professional)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </Modal>
