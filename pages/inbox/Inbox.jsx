@@ -1,5 +1,5 @@
 import { FiSearch } from "react-icons/fi";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CustomComponent from "../shared/CustomComponent";
 import { FaHeadset } from "react-icons/fa";
 import { Modal } from "antd";
@@ -15,13 +15,7 @@ function Inbox() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (location.pathname === "/inbox/alerts") {
-      setSelectedTab("alerts");
-    } else {
-      setSelectedTab("chat");
-    }
-  }, [location.pathname]);
+  
 
   return (
     <CustomComponent>
@@ -30,7 +24,7 @@ function Inbox() {
           <h1 className="text-2xl font-bold mb-4">Inbox</h1>
           <div className="flex p-1 rounded-lg">
             <button
-              onClick={() => navigate("/inbox/chat")}
+              onClick={() => setSelectedTab("chat")}
               className={`w-full py-2 text-sm font-medium leading-5 focus:outline-none ${
                 selectedTab === "chat"
                   ? "border-b-2 border-[#00C0B5] text-[#00C0B5]"
@@ -40,7 +34,7 @@ function Inbox() {
               Chat
             </button>
             <button
-            onClick={() => navigate("/inbox/alerts")}
+              onClick={() => setSelectedTab("alerts")}
               className={`w-full py-2 text-sm font-medium leading-5 focus:outline-none  ${
                 selectedTab === "alerts"
                   ? "border-b-2 border-[#00C0B5] text-[#00C0B5]"
