@@ -16,16 +16,16 @@ const Navbar = ({ userType }) => {
     { name: "Home", path: "/" },
     { name: "Service", path: "/service" },
     { name: "Favourite", path: "/favourite" },
-    { name: "Inbox", path: "/inbox" },
+    { name: "Inbox", path: "/inbox/Chat" },
     { name: "Profile", path: "/profile" },
   ];
 
   const providerLinks = [
     { name: "Home", path: "/providerHome" },
     { name: "Calender", path: "/calender" },
-    { name: "Notification", path: "/inbox" },
+    { name: "Notification", path: "/inbox/alerts" },
     { name: "Request", path: "/providerRequest" },
-    { name: "Inbox", path: "/inbox" },
+    { name: "Inbox", path: "/inbox/Chat" },
     { name: "Profile", path: "/providerProfile" },
   ];
 

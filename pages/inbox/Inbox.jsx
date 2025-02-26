@@ -1,17 +1,27 @@
 import { FiSearch } from "react-icons/fi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CustomComponent from "../shared/CustomComponent";
 import { FaHeadset } from "react-icons/fa";
 import { Modal } from "antd";
 import { SlCallOut } from "react-icons/sl";
 import { RiMessage2Line } from "react-icons/ri";
 import AlertFeed from "../../src/components/inbox/AlertFeed";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Inbox() {
+  const location = useLocation();
+  console.log(location);
   const [selectedTab, setSelectedTab] = useState("chat");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (location.pathname === "/inbox/alerts") {
+      setSelectedTab("alerts");
+    } else {
+      setSelectedTab("chat");
+    }
+  }, [location.pathname]);
 
   return (
     <CustomComponent>
@@ -20,7 +30,7 @@ function Inbox() {
           <h1 className="text-2xl font-bold mb-4">Inbox</h1>
           <div className="flex p-1 rounded-lg">
             <button
-              onClick={() => setSelectedTab("chat")}
+              onClick={() => navigate("/inbox/chat")}
               className={`w-full py-2 text-sm font-medium leading-5 focus:outline-none ${
                 selectedTab === "chat"
                   ? "border-b-2 border-[#00C0B5] text-[#00C0B5]"
@@ -30,7 +40,7 @@ function Inbox() {
               Chat
             </button>
             <button
-              onClick={() => setSelectedTab("alerts")}
+            onClick={() => navigate("/inbox/alerts")}
               className={`w-full py-2 text-sm font-medium leading-5 focus:outline-none  ${
                 selectedTab === "alerts"
                   ? "border-b-2 border-[#00C0B5] text-[#00C0B5]"
@@ -59,6 +69,7 @@ function Inbox() {
                     >
                       <div className="relative">
                         <img
+                          onClick={() => navigate("/chat")}
                           src="https://avatar.iran.liara.run/public/4"
                           alt="Profile"
                           className="w-12 h-12 rounded-full object-cover"
@@ -84,21 +95,21 @@ function Inbox() {
                       </div>
                     </div>
                   ))}
+                  <div className="flex justify-center mt-4">
+                    <button
+                      onClick={() => {
+                        setIsModalOpen(true);
+                      }}
+                      className="w-1/2 md:w-1/3 bg-[#00C0B5] text-white rounded-lg px-4 py-3 flex items-center justify-center gap-2"
+                    >
+                      <FaHeadset className="w-5 h-5" />
+                      <p> Support</p>
+                    </button>
+                  </div>
                 </div>
               </>
             )}
             {selectedTab === "alerts" && <AlertFeed />}
-          </div>
-          <div className="flex justify-center mt-4">
-            <button
-              onClick={() => {
-                setIsModalOpen(true);
-              }}
-              className="w-1/2 md:w-1/3 bg-[#00C0B5] text-white rounded-lg px-4 py-3 flex items-center justify-center gap-2"
-            >
-              <FaHeadset className="w-5 h-5" />
-              <p> Support</p>
-            </button>
           </div>
           <Modal
             open={isModalOpen}

@@ -29,7 +29,7 @@ export default function ServiceCard({ title, time, date, image, type }) {
           className="w-20 h-20 object-cover rounded-lg"
         />
         <div className="ml-4 flex-grow">
-          <h3 className="text-lg font-semibold text-[#00C0B5]">{title}</h3>
+          <h3 className="text-lg font-semibold text-[#00C0B5] ">{title}</h3>
           <div className="flex items-center text-gray-600 text-sm mt-1">
             <FaClock className="w-4 h-4 mr-2 text-gray-500" />
             {time}
