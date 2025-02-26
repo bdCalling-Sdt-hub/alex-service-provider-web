@@ -58,11 +58,11 @@ function Service() {
         </div>
 
         {/* Filter Services Based on Active Tab */}
-        <div className="mt-4">
+        <div  className="mt-4">
           {services
             .filter((service) => service.type === activeTab.toLowerCase())
             .map((service, index) => (
-              <ServiceCard key={index} {...service} />
+              <ServiceCard  key={index} {...service} />
             ))}
         </div>
       </div>

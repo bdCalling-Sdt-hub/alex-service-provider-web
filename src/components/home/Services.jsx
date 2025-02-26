@@ -1,7 +1,9 @@
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import { LuBuilding2 } from "react-icons/lu";
+// import { useNavigate } from "react-router-dom";
 
 export default function Services() {
+  // const navigate = useNavigate()
   const services = [
     {
       icon: LuBuilding2,
@@ -39,6 +41,7 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
+              // onClick={navigate("/ProfessionalProfile")}
               className="group rounded-xl hover:bg-[#E6FAF9] p-5 hover:shadow-md transition duration-300 flex flex-col justify-start items-start"
             >
               <div className="mb-5 inline-flex rounded-lg bg-[#00BFB3] p-3 text-white">

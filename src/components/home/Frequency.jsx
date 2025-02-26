@@ -20,7 +20,6 @@ export default function Frequency() {
     { day: "Fri", date: "17" },
     { day: "Sat", date: "18" },
   ];
-
   const timeSlots = [
     { time: "9-6", icon: <IoSunny className="h-4 w-4" /> },
     { time: "9-12", icon: <IoSunny className="h-4 w-4" /> },
