@@ -8,6 +8,7 @@ import {
   FaStar,
   FaSyncAlt,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function FavouritesCard() {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
@@ -32,15 +33,18 @@ export default function FavouritesCard() {
   };
 
   return (
+    // <Link to="/ProfessionalProfile">
     <div className="w-full md:w-[400px] lg:w-[400px] p-5  mx-auto my-5 md:my-16 bg-white rounded-2xl shadow-lg flex flex-col">
       {/* Profile Image */}
       <div className="flex">
         <div className="relative">
-          <img
-            src="https://avatar.iran.liara.run/public/18"
-            alt="Profile"
-            className="w-14 h-14 rounded-full object-cover"
-          />
+          <Link to="/ProfessionalProfile">
+            <img
+              src="https://avatar.iran.liara.run/public/18"
+              alt="Profile"
+              className="w-14 h-14 rounded-full object-cover"
+            />
+          </Link>
           <span className="absolute top-10 -right-1 bg-white opacity-75 p-1 rounded-full shadow">
             <FaHeart className="text-red-500 z-10 opacity-100" />
           </span>
@@ -137,5 +141,6 @@ export default function FavouritesCard() {
         </span>
       </div>
     </div>
+    // </Link>
   );
 }
